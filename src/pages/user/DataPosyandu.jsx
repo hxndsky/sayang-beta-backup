@@ -351,27 +351,27 @@ const DataPosyandu = () => {
   return (
     <>
       <Header />
-      <section className="bg-white lg:px-6 xl:px-32 md:px-4 sm:px-4 pt-24">
-        <div className="breadcrumbs text-base">
-          <ul>
-            <li>
-              <Link to="/" className="hover:text-[#EC8305]">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link className="hover:text-[#EC8305]">Data</Link>
-            </li>
-            <li>
-              <Link className="font-semibold text-[#024CAA]">
-                Data Posyandu
-              </Link>
-            </li>
-          </ul>
+      <section>
+        <div className="bg-[#024CAA] lg:px-6 xxl:px-72 xl:px-36 md:px-4 sm:px-4 pt-24 pb-10">
+          <div className="breadcrumbs text-base">
+            <ul>
+              <li>
+                <Link to="/" className="hover:text-[#EC8305]">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link className="font-semibold text-white">Data Posyandu</Link>
+              </li>
+            </ul>
+          </div>
+          <h1 className="text-5xl font-bold pt-6 text-white">
+            Data Posyandu di Kota Semarang
+          </h1>
         </div>
       </section>
 
-      <section className="bg-white lg:px-6 xl:px-32 md:px-4 sm:px-4 pb-8 pt-8 text-black">
+      <section className="bg-white lg:px-6 xxl:px-72 xl:px-36 md:px-4 sm:px-4 pb-8 pt-4 text-black">
         <div className="p-4">
           <div
             className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center mb-4 space-y-4 sm:space-y-0"
@@ -414,10 +414,7 @@ const DataPosyandu = () => {
               </thead>
               <tbody>
                 {currentData.map((item, index) => (
-                  <tr
-                    key={index}
-                    className="hover:bg-[#F0F0F0]"
-                  >
+                  <tr key={index} className="hover:bg-[#F0F0F0]">
                     <td className="border p-2">{item.nama}</td>
                     <td className="border p-2">{item.kecamatan}</td>
                     <td className="border p-2">{item.kelurahan}</td>
@@ -429,7 +426,8 @@ const DataPosyandu = () => {
           </div>
 
           <div
-            className="flex flex-col sm:flex-col md:flex-row sm:justify-between items-start md:items-center mt-4 space-y-4 sm:space-y-4 md:space-y-0" data-aos="fade-up"
+            className="flex flex-col sm:flex-col md:flex-row sm:justify-between items-start md:items-center mt-4 space-y-4 sm:space-y-4 md:space-y-0"
+            data-aos="fade-up"
           >
             <p>
               Menampilkan {startIndex + 1} hingga{" "}

@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <>
       {/* Navbar for mobile */}
-      <div className="fixed w-full z-30 flex justify-between items-center px-8 py-4 bg-white xl:hidden shadow-lg border-b-4 border-[#EC8305]">
+      <div className="fixed w-full z-30 flex justify-between items-center px-8 py-4 bg-white xl:hidden shadow-lg border-b-[3px] border-[#024CAA]">
         <Link to="/" className="text-2xl font-bold text-[#024CAA]">
           Sayang<span className="text-[#EC8305]">Beta</span>
         </Link>

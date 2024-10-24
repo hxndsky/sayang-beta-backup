@@ -349,27 +349,27 @@ const DataDokter = () => {
   return (
     <>
       <Header />
-      <section className="bg-white lg:px-6 xl:px-32 md:px-6 sm:px-4 pt-24">
-        <div className="breadcrumbs text-base">
-          <ul>
-            <li>
-              <Link to="/" className="hover:text-[#EC8305]">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link className="hover:text-[#EC8305]">Data</Link>
-            </li>
-            <li>
-              <Link className="font-semibold text-[#024CAA]">
-                Data Dokter Spesialis Anak Kota Semarang
-              </Link>
-            </li>
-          </ul>
+      <section>
+        <div className="bg-[#024CAA] lg:px-6 xxl:px-72 xl:px-36 md:px-4 sm:px-4 pt-24 pb-10">
+          <div className="breadcrumbs text-base">
+            <ul>
+              <li>
+                <Link to="/" className="hover:text-[#EC8305]">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link className="font-semibold text-white">Data Dokter Spesialis Anak Kota Semarang</Link>
+              </li>
+            </ul>
+          </div>
+          <h1 className="text-5xl font-bold pt-6 text-white">
+          Data Dokter Spesialis Anak Kota Semarang
+          </h1>
         </div>
       </section>
 
-      <section className="bg-white lg:px-6 xl:px-32 md:px-4 sm:px-4 pb-8 pt-8 text-black">
+      <section className="bg-white lg:px-6 xxl:px-72 xl:px-36 md:px-4 sm:px-4 pb-8 pt-4 text-black">
         <div className="p-4">
           <div className="flex flex-col sm:flex-col md:flex-row md:justify-between sm:items-start items-center mb-4 space-y-4 sm:space-y-4 md:space-y-0"
           data-aos="fade-up">
