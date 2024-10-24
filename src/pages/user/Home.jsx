@@ -9,20 +9,22 @@ const Home = () => {
     <>
       <Header />
       <section>
-        <div className="py-14 bg-[#024CAA] md:px-8 xl:px-36 sm:px-8">
+        <div className="py-14 bg-[#024CAA] md:px-8 xl:px-36 sm:px-8 xxl:px-72">
           <h1 className="text-5xl font-bold pt-14">
             Sayang<span className="text-[#EC8305]">Beta</span>
           </h1>
-          <p className="text-2xl pt-4 w-1/2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
-            deserunt.
+          <p className="text-2xl pt-4 w-3/4">
+            Sayang Beta merupakan aplikasi yang dikembangkan oleh Dinas
+            Kesehatan Kota Semarang untuk pemantauan perkembangan dan
+            pertumbuhan anak serta balita, yang digunakan sebagai salah satu
+            upaya penurunan angka stunting di Kota Semarang.
           </p>
         </div>
       </section>
 
       <section>
-        <div className="py-12 xl:px-36 bg-white sm:px-6 lg:px-8">
-          <h2 className="flex gap-4 text-3xl font-bold text-[#EC8305] mb-8">
+        <div className="py-12 xl:px-36 bg-white sm:px-6 lg:px-8 xxl:px-72">
+          <h2 className="flex items-center gap-4 text-3xl font-bold text-[#EC8305] mb-8">
             Kegiatan
             <div class="divider divider-horizontal w-full"></div>
           </h2>
@@ -55,6 +57,15 @@ const Home = () => {
               Cari Kegiatan Lainnya &rarr;
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="py-12 xl:px-36 bg-white sm:px-6 lg:px-8 xxl:px-72">
+          <h2 className="flex text-end items-center text-3xl font-bold text-[#EC8305] mb-8">
+            <div class="divider divider-horizontal w-full"></div>
+            Media Informasi
+          </h2>
         </div>
       </section>
       <Footer />

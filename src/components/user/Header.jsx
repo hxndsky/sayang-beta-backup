@@ -207,12 +207,6 @@ const Header = () => {
                   >
                     Data Posyandu di Kota Semarang
                   </Link>
-                  <Link
-                    to="/data/3"
-                    className="block text-black hover:text-[#EC8305] p-2 rounded-sm"
-                  >
-                    Data Visualisasi Stunting Kota Semarang
-                  </Link>
                 </div>
               </details>
               <Link
@@ -243,7 +237,7 @@ const Header = () => {
       </div>
 
       {/* Desktop navbar */}
-      <div className="hidden xl:flex navbar-sticky z-30 justify-between items-center xl:px-36 py-4 bg-white border-b-[4px] border-[#EC8305] shadow-lg">
+      <div className="hidden xl:flex navbar-sticky z-30 justify-between items-center xl:px-36 xxl:px-72 py-4 bg-white border-b-[4px] border-[#EC8305] shadow-lg">
         {/* Logo */}
         <Link to="/" className="text-3xl font-bold text-[#024CAA]">
           Sayang<span className="text-[#EC8305]">Beta</span>
@@ -392,12 +386,6 @@ const Header = () => {
                 className="block px-4 py-2 hover:bg-[#f0f0f0] transition duration-200"
               >
                 Data Posyandu di Kota Semarang
-              </Link>
-              <Link
-                to="/data/3"
-                className="block px-4 py-2 hover:bg-[#f0f0f0] transition duration-200"
-              >
-                Data Visualisasi Stunting Kota Semarang
               </Link>
             </div>
           </div>

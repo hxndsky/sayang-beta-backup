@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#024CAA] text-white py-4">
       {/* Perbesar lebar container */}
-      <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-8 xl:px-32">
+      <div className="mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-8 xl:px-36 xxl:px-72">
         {/* Logo and description */}
         <div>
           <h1 className="text-3xl font-bold mb-4">
@@ -68,7 +68,7 @@ const Footer = () => {
 
       {/* Footer Bottom Section */}
       <hr className="mt-4 mb-4 text-white opacity-50" />
-      <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row justify-between items-center px-8 xl:px-32 lg:px-8 mt-4">
+      <div className="mx-auto flex flex-col lg:flex-row justify-between items-center px-8 xl:px-32 xxl:px-72 lg:px-8 mt-4">
         <p className="text-base">
           Copyright © 2024{" "}
           <span className="font-semibold">Dinas Kesehatan Kota Semarang</span> |
