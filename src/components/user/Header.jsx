@@ -237,7 +237,7 @@ const Header = () => {
       </div>
 
       {/* Desktop navbar */}
-      <div className="hidden xl:flex navbar-sticky z-30 justify-between items-center xl:px-36 xxl:px-72 py-4 bg-white border-b-[4px] border-[#EC8305] shadow-lg">
+      <div className="hidden xl:flex navbar-sticky z-30 justify-between items-center xl:px-36 xxl:px-72 py-4 bg-white border-b-[3px] border-[#024CAA] shadow-lg">
         {/* Logo */}
         <Link to="/" className="text-3xl font-bold text-[#024CAA]">
           Sayang<span className="text-[#EC8305]">Beta</span>
