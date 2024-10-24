@@ -81,7 +81,7 @@ const Header = () => {
                 Home
               </Link>
               <Link
-                to="#kegiatan"
+                to="/kegiatan"
                 className="block text-black hover:text-[#EC8305] p-2 rounded-sm"
               >
                 Kegiatan
@@ -243,7 +243,7 @@ const Header = () => {
       </div>
 
       {/* Desktop navbar */}
-      <div className="hidden xl:flex navbar-sticky z-30 justify-between items-center xl:px-36 py-4 bg-white border-b-[6px] border-[#EC8305] shadow-lg">
+      <div className="hidden xl:flex navbar-sticky z-30 justify-between items-center xl:px-36 py-4 bg-white border-b-[4px] border-[#EC8305] shadow-lg">
         {/* Logo */}
         <Link to="/" className="text-3xl font-bold text-[#024CAA]">
           Sayang<span className="text-[#EC8305]">Beta</span>
@@ -258,7 +258,7 @@ const Header = () => {
             Home
           </Link>
           <Link
-            to="#kegiatan"
+            to="/kegiatan"
             className="text-black hover:text-[#EC8305] px-2 py-2 rounded-sm transition duration-200"
           >
             Kegiatan
@@ -419,7 +419,7 @@ const Header = () => {
           </Link>
           <Link
             to="/buat-akun"
-            className="border-[#024CAA] bg-[#024CAA] btn-outline-primary hover:bg-[#091057] hover:border-[#091057] text-white px-4 py-2 rounded-sm"
+            className="border-[#024CAA] bg-[#024CAA] btn-outline-primary hover:bg-[#024CAA] hover:border-[#024CAA] text-white px-4 py-2 rounded-sm"
           >
             Buat Akun
           </Link>

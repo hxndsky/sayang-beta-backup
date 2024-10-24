@@ -12,6 +12,8 @@ import ForgotPass from './auth/ForgotPass';
 
 // PAGES
 import Home from './pages/user/Home';
+import Kegiatan from './pages/user/Kegiatan';
+import DetailKegiatan from './pages/user/DetailKegiatan';
 import MediaVideo from './pages/user/MediaVideo';
 import MediaMajalah from './pages/user/MediaMajalah';
 import MediaInfografis from './pages/user/MediaInfografis';
@@ -33,6 +35,8 @@ function App() {
         <div className="app-container">
           <Routes>
             <Route exact path="/" element={<Home />} />
+            <Route path="/kegiatan" element={<Kegiatan />} />
+            <Route path="/kegiatan/:slug" element={<DetailKegiatan />} />
             <Route path="/media/1" element={<MediaVideo />} />
             <Route path="/media/2" element={<MediaMajalah />} />
             <Route path="/media/3" element={<MediaInfografis />} />

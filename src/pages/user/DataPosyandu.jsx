@@ -351,7 +351,7 @@ const DataPosyandu = () => {
   return (
     <>
       <Header />
-      <section className="bg-white lg:px-6 xl:px-28 md:px-4 sm:px-4 pt-24">
+      <section className="bg-white lg:px-6 xl:px-32 md:px-4 sm:px-4 pt-24">
         <div className="breadcrumbs text-base">
           <ul>
             <li>
@@ -371,7 +371,7 @@ const DataPosyandu = () => {
         </div>
       </section>
 
-      <section className="bg-white lg:px-6 xl:px-28 md:px-4 sm:px-4 pb-8 pt-8 text-black">
+      <section className="bg-white lg:px-6 xl:px-32 md:px-4 sm:px-4 pb-8 pt-8 text-black">
         <div className="p-4">
           <div
             className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center mb-4 space-y-4 sm:space-y-0"
