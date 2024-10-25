@@ -351,8 +351,8 @@ const DataPosyandu = () => {
   return (
     <>
       <Header />
-      <section>
-        <div className="bg-[#024CAA] lg:px-6 xxl:px-72 xl:px-36 md:px-4 sm:px-4 pt-24 pb-10">
+      <section className="bg-[#024CAA]">
+        <div className="lg:px-6 xxl:px-72 xl:px-36 md:px-4 sm:px-4 pt-24 pb-10">
           <div className="breadcrumbs text-base">
             <ul>
               <li>
@@ -361,7 +361,7 @@ const DataPosyandu = () => {
                 </Link>
               </li>
               <li>
-                <Link className="font-semibold text-white">Data Posyandu</Link>
+                <Link className="font-semibold text-white">Data Posyandu di Kota Semarang</Link>
               </li>
             </ul>
           </div>

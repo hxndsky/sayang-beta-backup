@@ -30,57 +30,11 @@ const Home = () => {
           </p>
         </div>
       </section>
-      {/* Tentang Kami */}
-      <section className="bg-white py-12 pt-12" id="tentang">
-        <div className="mx-auto flex flex-col lg:flex-row items-center sm:px-6 lg:px-8 xl:px-36 xxl:px-72">
-          {/* Gambar */}
-          <div className="xl:w-1/2">
-            <img
-              src="https://i.ibb.co.com/Z6jd7tY/thumb.jpg" // Ganti dengan path gambar yang benar
-              alt="Rumah Pelita"
-              className="w-full h-auto rounded-sm"
-              data-aos="fade-right"
-            />
-          </div>
-
-          {/* Divider Vertikal */}
-          <div className="hidden lg:block mx-8">
-            <div className="h-96 w-px bg-gray-300" data-aos="fade-up"></div>
-          </div>
-
-          {/* Konten */}
-          <div
-            className="lg:w-1/2 mt-8 lg:mt-0 text-center lg:text-start"
-            data-aos="fade-left"
-          >
-            <h2 className="text-4xl font-bold text-[#EC8305] mb-2">
-              Tentang Kami
-            </h2>
-            <p className="text-[#263238] mb-10">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nisi atque voluptas possimus ex dolore ab dicta dolor consequatur temporibus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, vero! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, voluptas. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates, cumque!
-            </p>
-            <ul>
-              <li className="mb-2">
-                <h3 className="text-2xl font-semibold text-gray-900">Visi</h3>
-                <p className="text-[#263238] mb-4">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, quo! Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, distinctio.
-                </p>
-              </li>
-              <li>
-                <h3 className="text-2xl font-semibold text-gray-900">Misi</h3>
-                <p className="text-[#263238]">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, sequi. 
-                </p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
 
       {/* Media Informasi */}
       <section id="mediainformasi" className="bg-white">
         <div
-          className="py-8 xl:px-36 sm:px-6 lg:px-8 xxl:px-72"
+          className="py-8 pt-12 xl:px-36 sm:px-6 lg:px-8 xxl:px-72"
           data-aos="fade-left"
         >
           <div className="flex items-center justify-start w-full mb-8">
@@ -194,6 +148,60 @@ const Home = () => {
             >
               Cari Kegiatan Lainnya &rarr;
             </Link>
+          </div>
+        </div>
+      </section>
+      {/* Tentang Kami */}
+      <section className="bg-white py-12" id="tentang">
+        <div className="mx-auto flex flex-col lg:flex-row items-center sm:px-6 lg:px-8 xl:px-36 xxl:px-72">
+          {/* Gambar */}
+          <div className="xl:w-1/2">
+            <img
+              src="https://i.ibb.co.com/Z6jd7tY/thumb.jpg" // Ganti dengan path gambar yang benar
+              alt="Rumah Pelita"
+              className="w-full h-auto rounded-sm"
+              data-aos="fade-right"
+            />
+          </div>
+
+          {/* Divider Vertikal */}
+          <div className="hidden lg:block mx-8">
+            <div className="h-96 w-px bg-gray-300" data-aos="fade-up"></div>
+          </div>
+
+          {/* Konten */}
+          <div
+            className="lg:w-1/2 mt-8 lg:mt-0 text-center lg:text-start"
+            data-aos="fade-left"
+          >
+            <h2 className="text-4xl font-bold text-[#EC8305] mb-2">
+              Tentang Kami
+            </h2>
+            <p className="text-[#263238] mb-10">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Aspernatur nisi atque voluptas possimus ex dolore ab dicta dolor
+              consequatur temporibus. Lorem ipsum, dolor sit amet consectetur
+              adipisicing elit. Ex, vero! Lorem ipsum, dolor sit amet
+              consectetur adipisicing elit. Totam, voluptas. Lorem ipsum dolor
+              sit amet consectetur, adipisicing elit. Voluptates, cumque!
+            </p>
+            <ul>
+              <li className="mb-2">
+                <h3 className="text-2xl font-semibold text-gray-900">Visi</h3>
+                <p className="text-[#263238] mb-4">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Voluptates, quo! Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Earum, distinctio.
+                </p>
+              </li>
+              <li>
+                <h3 className="text-2xl font-semibold text-gray-900">Misi</h3>
+                <p className="text-[#263238]">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo,
+                  sequi.
+                </p>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
