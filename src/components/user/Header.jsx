@@ -92,6 +92,12 @@ const Header = () => {
               >
                 FAQ
               </Link>
+              <Link
+                to="#mediainformasi"
+                className="block text-black hover:text-[#EC8305] p-2 rounded-sm"
+              >
+                Media Informasi
+              </Link>
 
               {/* Dropdown Layanan */}
               <details className="group">
@@ -128,51 +134,6 @@ const Header = () => {
                     className="block text-black hover:text-[#EC8305] p-2 rounded-sm"
                   >
                     Layanan 3
-                  </Link>
-                </div>
-              </details>
-
-              {/* Dropdown Media Informasi */}
-              <details className="group">
-                <summary className="flex items-center justify-between cursor-pointer text-black hover:text-[#EC8305]  p-2 rounded-sm">
-                  Media Informasi
-                  <svg
-                    className="w-5 h-5 transform group-open:rotate-180 transition-transform"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </summary>
-                <div className="pl-6 mt-2 space-y-2">
-                  <Link
-                    to="/media/1"
-                    className="block text-black hover:text-[#EC8305] p-2 rounded-sm"
-                  >
-                    Video
-                  </Link>
-                  <Link
-                    to="/media/2"
-                    className="block text-black hover:text-[#EC8305] p-2 rounded-sm"
-                  >
-                    Majalah
-                  </Link>
-                  <Link
-                    to="/media/3"
-                    className="block text-black hover:text-[#EC8305] p-2 rounded-sm"
-                  >
-                    Infografis
-                  </Link>
-                  <Link
-                    to="/media/4"
-                    className="block text-black hover:text-[#EC8305] p-2 rounded-sm"
-                  >
-                    Artikel Kesehatan
                   </Link>
                 </div>
               </details>
@@ -263,6 +224,12 @@ const Header = () => {
           >
             FAQ
           </Link>
+          <Link
+            to="#mediainformasi"
+            className="text-black hover:text-[#EC8305] px-2 py-2 rounded-sm transition duration-200"
+          >
+            Media Informasi
+          </Link>
 
           {/* Dropdown Layanan */}
           <div className="dropdown dropdown-hover px-2 py-2 text-black hover:text-[#EC8305] transition duration-200">
@@ -302,54 +269,6 @@ const Header = () => {
                 className="block px-4 py-2 hover:bg-[#f0f0f0] transition duration-200"
               >
                 Layanan 3
-              </Link>
-            </div>
-          </div>
-
-          {/* Dropdown Media Informasi */}
-          <div className="dropdown dropdown-hover px-2 py-2 text-black hover:text-[#EC8305] transition duration-200">
-            <label
-              className="flex cursor-pointer items-center gap-2"
-              tabIndex="0"
-            >
-              Media Informasi
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </label>
-            <div className="dropdown-menu dropdown-menu-bottom-right mt-2 bg-white text-black shadow-lg rounded-sm">
-              <Link
-                to="/media/1"
-                className="block px-4 py-2 hover:bg-[#f0f0f0] transition duration-200"
-              >
-                Video
-              </Link>
-              <Link
-                to="/media/2"
-                className="block px-4 py-2 hover:bg-[#f0f0f0] transition duration-200"
-              >
-                Infografis
-              </Link>
-              <Link
-                to="/media/3"
-                className="block px-4 py-2 hover:bg-[#f0f0f0] transition duration-200"
-              >
-                Majalah
-              </Link>
-              <Link
-                to="/media/4"
-                className="block px-4 py-2 hover:bg-[#f0f0f0] transition duration-200"
-              >
-                Artikel Kesehatan
               </Link>
             </div>
           </div>
