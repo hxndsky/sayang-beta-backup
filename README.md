@@ -16,7 +16,13 @@ npm install aos
 npm install rippleui
 npm install @fortawesome/fontawesome-free
 ```
-3. Import Bootstrap ke index.css jika belum ada
+3. Import Tailwindcss ke index.css jika belum ada
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+4. Pastikan isi tailwind.config.js sama seperti berikut
 ```
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -36,13 +42,6 @@ module.exports = {
   },
   plugins: [require("rippleui")],
 }
-
-```
-4. Pastikan isi tailwind.config.js sama seperti berikut
-```
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 ```
 4. Cek isi package.json lalu pastikan isi "dependencies" sama dengan ini:
 ```
