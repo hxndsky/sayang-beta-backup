@@ -101,7 +101,7 @@ const Header = () => {
 
               {/* Dropdown Layanan */}
               <details className="group">
-                <summary className="flex items-center justify-between cursor-pointer text-black hover:text-[#EC8305]  p-2 rounded-sm">
+                <summary className="flex items-center justify-between cursor-pointer text-black hover:text-[#EC8305] p-2 rounded-sm">
                   Layanan
                   <svg
                     className="w-5 h-5 transform group-open:rotate-180 transition-transform"
@@ -254,19 +254,19 @@ const Header = () => {
             <div className="dropdown-menu dropdown-menu-bottom-right mt-2 bg-white text-black shadow-lg rounded-sm">
               <Link
                 to="/layanan/1"
-                className="block px-4 py-2 hover:bg-[#f0f0f0] transition duration-200"
+                className="block px-4 py-2 hover:bg-[#F9FAFB] transition duration-200"
               >
                 Layanan 1
               </Link>
               <Link
                 to="/layanan/2"
-                className="block px-4 py-2 hover:bg-[#f0f0f0] transition duration-200"
+                className="block px-4 py-2 hover:bg-[#F9FAFB] transition duration-200"
               >
                 Layanan 2
               </Link>
               <Link
                 to="/layanan/3"
-                className="block px-4 py-2 hover:bg-[#f0f0f0] transition duration-200"
+                className="block px-4 py-2 hover:bg-[#F9FAFB] transition duration-200"
               >
                 Layanan 3
               </Link>
@@ -296,13 +296,13 @@ const Header = () => {
             <div className="dropdown-menu dropdown-menu-bottom-right mt-2 bg-white text-black shadow-lg rounded-sm">
               <Link
                 to="/data/1"
-                className="block px-4 py-2 hover:bg-[#f0f0f0] transition duration-200"
+                className="block px-4 py-2 hover:bg-[#F9FAFB] transition duration-200"
               >
                 Data Dokter Spesialis Anak Kota Semarang
               </Link>
               <Link
                 to="/data/2"
-                className="block px-4 py-2 hover:bg-[#f0f0f0] transition duration-200"
+                className="block px-4 py-2 hover:bg-[#F9FAFB] transition duration-200"
               >
                 Data Posyandu di Kota Semarang
               </Link>

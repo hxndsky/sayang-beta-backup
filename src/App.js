@@ -10,6 +10,9 @@ import Login from './auth/Login';
 import Register from './auth/Register';
 import ForgotPass from './auth/ForgotPass';
 
+// COMPONENTS
+import ScrollToTop from './components/user/ScrollToTop';
+
 // PAGES
 import Home from './pages/user/Home';
 import Kegiatan from './pages/user/Kegiatan';
@@ -32,7 +35,7 @@ function App() {
   return (
     <>
       <Router>
-        <div className="app-container">
+          <ScrollToTop />
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/kegiatan" element={<Kegiatan />} />
@@ -47,7 +50,6 @@ function App() {
             <Route path="/buat-akun" element={<Register />} />
             <Route path="/lupa-katasandi" element={<ForgotPass />} />
           </Routes>
-        </div>
       </Router>
     </>
   );

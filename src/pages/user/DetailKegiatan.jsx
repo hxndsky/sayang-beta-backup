@@ -7,7 +7,7 @@ import Footer from "../../components/user/Footer";
 
 const DetailKegiatan = () => {
   const { slug } = useParams();
-  const kegiatan = DataKegiatan.find((item) => item.slug === slug); // Cari berita berdasarkan slug
+  const kegiatan = DataKegiatan.find((item) => item.slug === slug);
 
   if (!kegiatan) {
     return <p>Kegiatan not found</p>;
@@ -26,87 +26,53 @@ const DetailKegiatan = () => {
                 </Link>
               </li>
               <li>
-                <Link className="font-semibold text-white">{kegiatan.title}</Link>
+                <Link className="font-semibold text-white">
+                  {kegiatan.title}
+                </Link>
               </li>
             </ul>
           </div>
           <h1 className="w-3/4 text-5xl font-bold pt-6 text-white">
-          {kegiatan.title}
+            {kegiatan.title}
           </h1>
         </div>
       </section>
 
       <section>
         <div className="pb-8 pt-12 bg-white xxl:px-72 xl:px-36 sm:px-6 lg:px-8 text-lg">
-          <p className="text-black pb-4"><span className="font-semibold">Tanggal Diposting: </span>{kegiatan.date}</p>
+          <p className="text-black pb-4">
+            <span className="font-semibold">Tanggal Diposting: </span>
+            {kegiatan.date}
+          </p>
           <div className="mt-4 text-gray-800">
             <p>{kegiatan.content}</p>
           </div>
+          <h2 className="flex items-center gap-4 text-3xl font-bold text-[#EC8305] mt-12">
+            Kegiatan Lainnya
+            <div className="flex-grow">
+              <hr className="border-gray-300" />
+            </div>
+          </h2>
         </div>
       </section>
 
       <section>
-        <div className="bg-white pb-8 pt-12 bg-white xxl:px-72 xl:px-36 sm:px-6 lg:px-8">
+        <div className="pb-12 bg-white xxl:px-72 xl:px-36 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Card 1 */}
-            <Link
-              to="/media/1"
-              className="block p-6 bg-white border border-gray-200 rounded-sm shadow-sm hover:border-[#024CAA] hover:shadow-lg transition relative"
-            >
-              <h3 className="mb-2 text-2xl font-semibold text-gray-900">
-                Video
-              </h3>
-              <p className="text-sm text-gray-600">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                voluptas quia, pariatur cumque quasi dicta perferendis eum quis
-                blanditiis officia corrupti tempora eaque error eligendi.
-              </p>
-            </Link>
-
-            {/* Card 2 */}
-            <Link
-              to="/media/2"
-              className="block p-6 bg-white border border-gray-200 rounded-sm shadow-sm hover:border-[#024CAA] hover:shadow-lg transition relative"
-            >
-              <h3 className="mb-2 text-2xl font-semibold text-gray-900">
-                Infografis
-              </h3>
-              <p className="text-sm text-gray-600">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                voluptas quia, pariatur cumque quasi dicta perferendis eum quis
-                blanditiis officia corrupti tempora eaque error eligendi.
-              </p>
-            </Link>
-
-            {/* Card 3 */}
-            <Link
-              to="/media/3"
-              className="block p-6 bg-white border border-gray-200 rounded-sm shadow-sm hover:border-[#024CAA] hover:shadow-lg transition relative"
-            >
-              <h3 className="mb-2 text-2xl font-semibold text-gray-900">
-                Majalah
-              </h3>
-              <p className="text-sm text-gray-600">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                voluptas quia, pariatur cumque quasi dicta perferendis eum quis
-                blanditiis officia corrupti tempora eaque error eligendi.
-              </p>
-            </Link>
-
-            {/* Card 4 */}
-            <Link
-              to="/media/4"
-              className="block p-6 bg-white border border-gray-200 rounded-sm shadow-sm hover:border-[#024CAA] hover:shadow-lg transition relative"
-            >
-              <h3 className="mb-2 text-2xl font-semibold text-gray-900">
-                Artikel Kesehatan
-              </h3>
-              <p className="text-sm text-gray-600">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                voluptas quia, pariatur cumque quasi dicta perferendis eum quis
-                blanditiis officia corrupti tempora eaque error eligendi.
-              </p>
-            </Link>
+            {DataKegiatan.map((kegiatan) => (
+              <Link
+                to={`/kegiatan/${kegiatan.slug}`} // Ubah link sesuai slug kegiatan
+                key={kegiatan.id}
+                className="bg-white shadow-md rounded-sm overflow-hidden transition-shadow duration-300 hover:shadow-lg block"
+              >
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    {kegiatan.title}
+                  </h3>
+                  <p className="text-sm text-[#024CAA] mt-4">{kegiatan.date}</p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

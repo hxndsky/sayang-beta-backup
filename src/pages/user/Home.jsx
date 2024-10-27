@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import {
+  FaChevronDown,
+  FaChevronUp,
+  FaStar,
+} from "react-icons/fa";
 import DataKegiatan from "./DataKegiatan";
 import Header from "../../components/user/Header";
 import Footer from "../../components/user/Footer";
@@ -11,6 +15,19 @@ const Home = () => {
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index); // Toggle logic, if clicked again it will close
   };
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Efek untuk mengganti testimonial otomatis setiap 5 detik
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex(
+        (prevIndex) => (prevIndex === 2 ? 0 : prevIndex + 1) // karena ada 3 item
+      );
+    }, 5000); // Ganti setiap 5 detik
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -34,7 +51,7 @@ const Home = () => {
       {/* Media Informasi */}
       <section id="mediainformasi" className="bg-white">
         <div
-          className="py-8 pt-12 xl:px-36 sm:px-6 lg:px-8 xxl:px-72"
+          className="py-16 pt-12 xl:px-36 sm:px-6 lg:px-8 xxl:px-72"
           data-aos="fade-left"
         >
           <div className="flex items-center justify-start w-full mb-8">
@@ -111,7 +128,7 @@ const Home = () => {
       {/* Kegiatan */}
       <section id="kegiatan" className="bg-white">
         <div
-          className="py-12 xl:px-36 sm:px-6 lg:px-8 xxl:px-72"
+          className="py-16 xl:px-36 sm:px-6 lg:px-8 xxl:px-72"
           data-aos="fade-right"
         >
           <h2 className="flex items-center gap-4 text-4xl font-bold text-[#EC8305] mb-8">
@@ -133,7 +150,11 @@ const Home = () => {
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h3
+                    className={`text-lg font-semibold ${
+                      activeIndex === 0 ? "text-[#EC8305]" : "text-gray-900"
+                    }`}
+                  >
                     {kegiatan.title}
                   </h3>
                   <p className="text-sm text-[#024CAA] mt-2">{kegiatan.date}</p>
@@ -152,7 +173,7 @@ const Home = () => {
         </div>
       </section>
       {/* Tentang Kami */}
-      <section className="bg-white py-12" id="tentang">
+      <section className="bg-white py-16" id="tentang">
         <div className="mx-auto flex flex-col lg:flex-row items-center sm:px-6 lg:px-8 xl:px-36 xxl:px-72">
           {/* Gambar */}
           <div className="xl:w-1/2">
@@ -206,9 +227,9 @@ const Home = () => {
         </div>
       </section>
       {/* FAQ */}
-      <section id="#faq" className="bg-white ">
+      <section id="#faq" className="bg-white">
         <div
-          className="py-8 xl:px-36 sm:px-6 lg:px-8 xxl:px-72"
+          className="py-16 pb-28 xl:px-36 sm:px-6 lg:px-8 xxl:px-72"
           data-aos="fade-up"
         >
           <div className="flex items-center justify-start w-full mb-8">
@@ -227,7 +248,11 @@ const Home = () => {
                 className="flex justify-between items-center px-6 py-4 cursor-pointer hover:bg-[#F0F0F0]"
                 onClick={() => toggleAccordion(0)}
               >
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3
+                  className={`text-lg font-semibold ${
+                    activeIndex === 0 ? "text-[#EC8305]" : "text-gray-900"
+                  }`}
+                >
                   Berapa biaya masuk Daycare Rumah Pelita?
                 </h3>
                 <span className="ml-2">
@@ -251,7 +276,11 @@ const Home = () => {
                 className="flex justify-between items-center px-6 py-4 cursor-pointer hover:bg-[#F0F0F0]"
                 onClick={() => toggleAccordion(1)}
               >
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3
+                  className={`text-lg font-semibold ${
+                    activeIndex === 1 ? "text-[#EC8305]" : "text-gray-900"
+                  }`}
+                >
                   Apa saja syarat masuk Daycare Rumah Pelita?
                 </h3>
                 <span className="ml-2">
@@ -277,7 +306,11 @@ const Home = () => {
                 className="flex justify-between items-center px-6 py-4 cursor-pointer hover:bg-[#F0F0F0]"
                 onClick={() => toggleAccordion(2)}
               >
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3
+                  className={`text-lg font-semibold ${
+                    activeIndex === 2 ? "text-[#EC8305]" : "text-gray-900"
+                  }`}
+                >
                   Kegiatan apa saja yang dilakukan di Daycare Rumah Pelita?
                 </h3>
                 <span className="ml-2">
@@ -311,7 +344,11 @@ const Home = () => {
                 className="flex justify-between items-center px-6 py-4 cursor-pointer hover:bg-[#F0F0F0]"
                 onClick={() => toggleAccordion(3)}
               >
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3
+                  className={`text-lg font-semibold ${
+                    activeIndex === 3 ? "text-[#EC8305]" : "text-gray-900"
+                  }`}
+                >
                   Apakah orang tua diperbolehkan mendampingi anak selama
                   kegiatan di Daycare Rumah Pelita?
                 </h3>
@@ -340,7 +377,11 @@ const Home = () => {
                 className="flex justify-between items-center px-6 py-4 cursor-pointer hover:bg-[#F0F0F0]"
                 onClick={() => toggleAccordion(4)}
               >
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3
+                  className={`text-lg font-semibold ${
+                    activeIndex === 4 ? "text-[#EC8305]" : "text-gray-900"
+                  }`}
+                >
                   Kapan anak dikategorikan lulus dari Daycare Rumah Pelita?
                 </h3>
                 <span className="ml-2">
@@ -361,6 +402,100 @@ const Home = () => {
               )}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Testimoni */}
+      <section className="bg-[#F9FAFB] py-16 px-6 xl:px-36 xxl:px-72">
+        <h2 className="text-3xl font-bold text-[#EC8305] mb-8 text-center">
+          Testimoni
+        </h2>
+        <div className="relative flex justify-center items-center overflow-hidden">
+          <div className="w-full max-w-lg p-4 transition-transform duration-500 ease-in-out">
+            {/* Testimoni yang Aktif */}
+            {currentIndex === 0 && (
+              <div className="text-center">
+                <img
+                  src="https://i.ibb.co/ZYW3VTp/brown-profile.jpg"
+                  alt="Ayu Saraswati"
+                  className="w-16 h-16 mx-auto rounded-full object-cover mb-4"
+                />
+                <p className="text-lg italic text-gray-700 mb-4">
+                  "Layanan Rumah Pelita sangat membantu! Saya merasa lebih
+                  tenang dan bersemangat untuk menjalani hari."
+                </p>
+                <div className="flex justify-center text-yellow-500 mb-4">
+                  {Array(5)
+                    .fill()
+                    .map((_, i) => (
+                      <FaStar key={i} />
+                    ))}
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900">
+                  Ayu Saraswati
+                </h3>
+              </div>
+            )}
+            {currentIndex === 1 && (
+              <div className="text-center">
+                <img
+                  src="https://i.ibb.co/8bPPkc4/blue-profile.jpg"
+                  alt="Budi Santoso"
+                  className="w-16 h-16 mx-auto rounded-full object-cover mb-4"
+                />
+                <p className="text-lg italic text-gray-700 mb-4">
+                  "Konselor di Rumah Pelita sangat profesional dan membantu saya
+                  menemukan solusi."
+                </p>
+                <div className="flex justify-center text-yellow-500 mb-4">
+                  {Array(4)
+                    .fill()
+                    .map((_, i) => (
+                      <FaStar key={i} />
+                    ))}
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900">
+                  Budi Santoso
+                </h3>
+              </div>
+            )}
+            {currentIndex === 2 && (
+              <div className="text-center">
+                <img
+                  src="https://i.ibb.co/2d7bH8D/green-profile.jpg"
+                  alt="Citra Lestari"
+                  className="w-16 h-16 mx-auto rounded-full object-cover mb-4"
+                />
+                <p className="text-lg italic text-gray-700 mb-4">
+                  "Dengan bantuan Rumah Pelita, saya lebih memahami diri saya
+                  dan menemukan tujuan hidup yang lebih baik."
+                </p>
+                <div className="flex justify-center text-yellow-500 mb-4">
+                  {Array(5)
+                    .fill()
+                    .map((_, i) => (
+                      <FaStar key={i} />
+                    ))}
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900">
+                  Citra Lestari
+                </h3>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Indikator Bawah */}
+        <div className="flex justify-center mt-6 space-x-2">
+          {[0, 1, 2].map((index) => (
+            <button
+              key={index}
+              className={`h-2 w-2 rounded-full transition-all duration-300 ${
+                index === currentIndex ? "bg-[#EC8305]" : "bg-gray-300"
+              }`}
+              onClick={() => setCurrentIndex(index)}
+            ></button>
+          ))}
         </div>
       </section>
       <Footer />
