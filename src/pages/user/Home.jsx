@@ -7,7 +7,7 @@ import {
   FaChevronRight,
   FaChevronLeft,
 } from "react-icons/fa";
-import DataKegiatan from "./DataKegiatan";
+import DataKegiatan from "../../components/dummy/DummyDataKegiatan";
 import Header from "../../components/user/Header";
 import Footer from "../../components/user/Footer";
 
@@ -15,20 +15,17 @@ const Home = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleAccordion = (index) => {
-    setActiveIndex(activeIndex === index ? null : index); // Toggle logic, if clicked again it will close
+    setActiveIndex(activeIndex === index ? null : index);
   };
 
-  // State untuk melacak testimonial yang sedang ditampilkan
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Fungsi untuk menggeser testimonial ke kanan
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % 3); // Sesuaikan jumlah testimonial
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % 3);
   };
 
-  // Fungsi untuk menggeser testimonial ke kiri
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + 3) % 3); // Sesuaikan jumlah testimonial
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + 3) % 3);
   };
 
   return (
@@ -65,7 +62,6 @@ const Home = () => {
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Card 1 */}
             <Link
               to="/media-informasi/video"
               className="block p-6 bg-white border border-gray-200 rounded-sm shadow-sm hover:border-[#024CAA] hover:shadow-lg transition relative"
@@ -80,7 +76,6 @@ const Home = () => {
               </p>
             </Link>
 
-            {/* Card 2 */}
             <Link
               to="/media-informasi/infografis"
               className="block p-6 bg-white border border-gray-200 rounded-sm shadow-sm hover:border-[#024CAA] hover:shadow-lg transition relative"
@@ -95,7 +90,6 @@ const Home = () => {
               </p>
             </Link>
 
-            {/* Card 3 */}
             <Link
               to="/media-informasi/majalah"
               className="block p-6 bg-white border border-gray-200 rounded-sm shadow-sm hover:border-[#024CAA] hover:shadow-lg transition relative"
@@ -110,7 +104,6 @@ const Home = () => {
               </p>
             </Link>
 
-            {/* Card 4 */}
             <Link
               to="/media-informasi/artikel-kesehatan"
               className="block p-6 bg-white border border-gray-200 rounded-sm shadow-sm hover:border-[#024CAA] hover:shadow-lg transition relative"
@@ -141,7 +134,6 @@ const Home = () => {
             </div>
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Menampilkan maksimal 4 kegiatan */}
             {DataKegiatan.slice(0, 4).map((kegiatan) => (
               <Link
                 key={kegiatan.id}
@@ -176,22 +168,19 @@ const Home = () => {
       {/* Tentang Kami */}
       <section className="bg-white py-16" id="tentang">
         <div className="mx-auto flex flex-col lg:flex-row items-center sm:px-6 lg:px-8 xl:px-36 xxl:px-72">
-          {/* Gambar */}
           <div className="xl:w-1/2">
             <img
-              src="https://i.ibb.co.com/Z6jd7tY/thumb.jpg" // Ganti dengan path gambar yang benar
+              src="https://i.ibb.co.com/Z6jd7tY/thumb.jpg"
               alt="Rumah Pelita"
               className="w-full h-auto rounded-sm"
               data-aos="fade-right"
             />
           </div>
 
-          {/* Divider Vertikal */}
           <div className="hidden lg:block mx-8">
             <div className="h-96 w-px bg-gray-300" data-aos="fade-up"></div>
           </div>
 
-          {/* Konten */}
           <div
             className="lg:w-1/2 mt-8 lg:mt-0 text-center lg:text-start"
             data-aos="fade-left"
@@ -227,8 +216,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
       {/* FAQ */}
-      <section id="#faq" className="bg-white">
+      <section id="faq" className="bg-white">
         <div
           className="py-16 pb-20 xl:px-36 sm:px-6 lg:px-8 xxl:px-72"
           data-aos="fade-up"
@@ -243,7 +233,6 @@ const Home = () => {
             </div>
           </div>
           <div className="space-y-4">
-            {/* FAQ Item 1 */}
             <div className="rounded-sm overflow-hidden">
               <div
                 className="flex justify-between items-center px-6 py-4 cursor-pointer hover:bg-[#F0F0F0]"
@@ -271,7 +260,6 @@ const Home = () => {
               )}
             </div>
 
-            {/* FAQ Item 2 */}
             <div className="rounded-sm overflow-hidden">
               <div
                 className="flex justify-between items-center px-6 py-4 cursor-pointer hover:bg-[#F0F0F0]"
@@ -301,7 +289,6 @@ const Home = () => {
               )}
             </div>
 
-            {/* FAQ Item 3 */}
             <div className="rounded-sm overflow-hidden">
               <div
                 className="flex justify-between items-center px-6 py-4 cursor-pointer hover:bg-[#F0F0F0]"
@@ -339,7 +326,6 @@ const Home = () => {
               )}
             </div>
 
-            {/* FAQ Item 4 */}
             <div className="rounded-sm overflow-hidden">
               <div
                 className="flex justify-between items-center px-6 py-4 cursor-pointer hover:bg-[#F0F0F0]"
@@ -372,7 +358,6 @@ const Home = () => {
                 </div>
               )}
             </div>
-            {/* FAQ Item 5 */}
             <div className="rounded-sm overflow-hidden">
               <div
                 className="flex justify-between items-center px-6 py-4 cursor-pointer hover:bg-[#F0F0F0]"
@@ -409,7 +394,6 @@ const Home = () => {
       {/* Testimoni */}
       <section id="testimoni" className="bg-white">
         <div className="flex flex-col md:flex-row items-start gap-8 py-16 pb-20 xl:px-36 sm:px-6 lg:px-8 xxl:px-72">
-          {/* Bagian Kiri (Judul dan Deskripsi) */}
           <div className="md:w-1/3">
             <h2 className="text-4xl font-bold text-[#EC8305] mb-4">
               Testimonial
@@ -420,18 +404,15 @@ const Home = () => {
             </p>
           </div>
 
-          {/* Divider Vertikal */}
           <div className="hidden lg:block mx-8">
             <div className="h-56 w-px bg-gray-300" data-aos="fade-up"></div>
           </div>
 
-          {/* Bagian Testimoni */}
           <div className="md:w-2/3 relative overflow-hidden">
             <div
               className="flex transition-transform duration-500"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
-              {/* Testimonial Card 1 */}
               <div className="w-full md:w-1/2 flex-shrink-0 flex flex-col gap-4">
                 <div className="flex items-center text-[#EC8305]">
                   {[...Array(5)].map((_, i) => (
@@ -449,7 +430,6 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* Testimonial Card 2 */}
               <div className="w-full md:w-1/2 flex-shrink-0 flex flex-col gap-4">
                 <div className="flex items-center text-[#EC8305]">
                   {[...Array(5)].map((_, i) => (
@@ -467,7 +447,6 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* Testimonial Card 3 */}
               <div className="w-full md:w-1/2 flex-shrink-0 flex flex-col gap-4">
                 <div className="flex items-center text-[#EC8305]">
                   {[...Array(5)].map((_, i) => (
@@ -485,7 +464,6 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* Testimonial Card 4 */}
               <div className="w-full md:w-1/2 flex-shrink-0 flex flex-col gap-4">
                 <div className="flex items-center text-[#EC8305]">
                   {[...Array(5)].map((_, i) => (
@@ -503,7 +481,6 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* Testimonial Card 5 */}
               <div className="w-full md:w-1/2 flex-shrink-0 flex flex-col gap-4">
                 <div className="flex items-center text-[#EC8305]">
                   {[...Array(5)].map((_, i) => (
@@ -522,7 +499,6 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Tombol Panah */}
             <div className="absolute top-2/3 transform -translate-y-1/2 flex gap-4 right-4">
               <button
                 onClick={handlePrev}

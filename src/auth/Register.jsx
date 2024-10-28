@@ -79,7 +79,6 @@ const Register = () => {
               </div>
             </div>
 
-            {/* Konfirmasi Kata Sandi */}
             <div className="relative">
               <label className="block mb-2 text-sm font-medium text-gray-700">
                 Konfirmasi Kata Sandi

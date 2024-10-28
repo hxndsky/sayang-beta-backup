@@ -8,6 +8,27 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
+  const scrollToTentang = () => {
+    const element = document.getElementById("tentang");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToFAQ = () => {
+    const element = document.getElementById("faq");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToMediaInformasi = () => {
+    const element = document.getElementById("mediainformasi");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       {/* Navbar for mobile */}
@@ -49,7 +70,7 @@ const Header = () => {
           className={`fixed inset-y-0 left-0 w-80 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
             isOpen ? "translate-x-0" : "-translate-x-full"
           }`}
-          onClick={(e) => e.stopPropagation()} // To prevent closing offcanvas when clicking inside
+          onClick={(e) => e.stopPropagation()}
         >
           <div className="flex flex-col h-full py-6 px-6 space-y-8">
             <div className="flex justify-between items-center">
@@ -87,19 +108,18 @@ const Header = () => {
                 Kegiatan
               </Link>
               <Link
-                to="#faq"
+                onClick={scrollToFAQ}
                 className="block text-black hover:text-[#EC8305] p-2 rounded-sm"
               >
                 FAQ
               </Link>
               <Link
-                to="/media-informasi"
+                onClick={scrollToMediaInformasi}
                 className="block text-black hover:text-[#EC8305] p-2 rounded-sm"
               >
                 Media Informasi
               </Link>
 
-              {/* Dropdown Layanan */}
               <details className="group">
                 <summary className="flex items-center justify-between cursor-pointer text-black hover:text-[#EC8305] p-2 rounded-sm">
                   Layanan
@@ -138,7 +158,6 @@ const Header = () => {
                 </div>
               </details>
 
-              {/* Dropdown Media Informasi */}
               <details className="group">
                 <summary className="flex items-center justify-between cursor-pointer text-black hover:text-[#EC8305]  p-2 rounded-sm">
                   Data
@@ -171,7 +190,7 @@ const Header = () => {
                 </div>
               </details>
               <Link
-                to="#tentang"
+                onClick={scrollToTentang}
                 className="block text-black hover:text-[#EC8305] p-2 rounded-sm"
               >
                 Tentang
@@ -199,12 +218,10 @@ const Header = () => {
 
       {/* Desktop navbar */}
       <div className="hidden xl:flex navbar-sticky z-30 justify-between items-center xl:px-36 xxl:px-72 py-4 bg-white border-b-[3px] border-[#024CAA] shadow-lg">
-        {/* Logo */}
         <Link to="/" className="text-3xl font-bold text-[#024CAA]">
           Sayang<span className="text-[#EC8305]">Beta</span>
         </Link>
 
-        {/* Navigation */}
         <nav className="space-x-2 font-medium uppercase text-sm">
           <Link
             to="/"
@@ -219,19 +236,18 @@ const Header = () => {
             Kegiatan
           </Link>
           <Link
-            to="#faq"
+            onClick={scrollToFAQ}
             className="text-black hover:text-[#EC8305] px-2 py-2 rounded-sm transition duration-200"
           >
             FAQ
           </Link>
           <Link
-            to="/media-informasi"
+            onClick={scrollToMediaInformasi}
             className="text-black hover:text-[#EC8305] px-2 py-2 rounded-sm transition duration-200"
           >
             Media Informasi
           </Link>
 
-          {/* Dropdown Layanan */}
           <div className="dropdown dropdown-hover px-2 py-2 text-black hover:text-[#EC8305] transition duration-200">
             <label
               className="flex cursor-pointer items-center gap-2"
@@ -273,7 +289,6 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Dropdown Data */}
           <div className="dropdown dropdown-hover px-2 py-2 text-black hover:text-[#EC8305] transition duration-200">
             <label
               className="flex cursor-pointer items-center gap-2"
@@ -310,7 +325,7 @@ const Header = () => {
           </div>
 
           <Link
-            to="#tentang"
+            onClick={scrollToTentang}
             className="text-black hover:text-[#EC8305] px-2 py-2 rounded-sm transition duration-200"
           >
             Tentang

@@ -1,4 +1,4 @@
-const DataKegiatan = [
+const DummyDataKegiatan = [
   {
     id: 1,
     title:
@@ -61,4 +61,4 @@ const DataKegiatan = [
   },
 ];
 
-export default DataKegiatan;
+export default DummyDataKegiatan;

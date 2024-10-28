@@ -17,7 +17,6 @@ import ScrollToTop from './components/user/ScrollToTop';
 import Home from './pages/user/Home';
 import Kegiatan from './pages/user/Kegiatan';
 import DetailKegiatan from './pages/user/DetailKegiatan';
-import MediaInformasi from './pages/user/MediaInformasi';
 import MediaVideo from './pages/user/MediaVideo';
 import MediaMajalah from './pages/user/MediaMajalah';
 import MediaInfografis from './pages/user/MediaInfografis';
@@ -28,8 +27,8 @@ import DataPosyandu from './pages/user/DataPosyandu';
 function App() {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // durasi animasi
-      once: true, // animasi hanya terjadi sekali saat scroll
+      duration: 1000,
+      once: true,
     });
   }, []);
 
@@ -41,7 +40,6 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route path="/kegiatan" element={<Kegiatan />} />
             <Route path="/kegiatan/:slug" element={<DetailKegiatan />} />
-            <Route path="/media-informasi" element={<MediaInformasi />} />
             <Route path="/media-informasi/video" element={<MediaVideo />} />
             <Route path="/media-informasi/majalah" element={<MediaMajalah />} />
             <Route path="/media-informasi/infografis" element={<MediaInfografis />} />

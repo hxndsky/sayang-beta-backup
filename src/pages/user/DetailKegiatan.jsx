@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import DataKegiatan from "./DataKegiatan";
+import DummyDataKegiatan from "../../components/dummy/DummyDataKegiatan";
 import Header from "../../components/user/Header";
 import Footer from "../../components/user/Footer";
 
 const DetailKegiatan = () => {
   const { slug } = useParams();
-  const kegiatan = DataKegiatan.find((item) => item.slug === slug);
+  const kegiatan = DummyDataKegiatan.find((item) => item.slug === slug);
 
   if (!kegiatan) {
     return <p>Kegiatan not found</p>;
@@ -64,7 +64,7 @@ const DetailKegiatan = () => {
       <section>
         <div className="pb-12 bg-white xxl:px-72 xl:px-36 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {DataKegiatan.map((kegiatan) => (
+            {DummyDataKegiatan.map((kegiatan) => (
               <Link
                 to={`/kegiatan/${kegiatan.slug}`} // Ubah link sesuai slug kegiatan
                 key={kegiatan.id}

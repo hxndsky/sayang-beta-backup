@@ -1,326 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import DummyDataPosyandu from "../../components/dummy/DummyDataPosyandu";
 import Header from "../../components/user/Header";
 import Footer from "../../components/user/Footer";
 
 const DataPosyandu = () => {
-  // Data dummy
-  const data = [
-    {
-      nama: "PUSPITA",
-      kecamatan: "Banyumanik",
-      kelurahan: "Ngesrep",
-      puskesmas: "Ngesrep",
-    },
-    {
-      nama: "KUNCUP MEKAR",
-      kecamatan: "Banyumanik",
-      kelurahan: "Ngesrep",
-      puskesmas: "Ngesrep",
-    },
-    {
-      nama: "GOTONGROYONG",
-      kecamatan: "Banyumanik",
-      kelurahan: "Tinjomoyo",
-      puskesmas: "Ngesrep",
-    },
-    {
-      nama: "TRISARI",
-      kecamatan: "Banyumanik",
-      kelurahan: "Ngesrep",
-      puskesmas: "Ngesrep",
-    },
-    {
-      nama: "MEKAR INDAH",
-      kecamatan: "Banyumanik",
-      kelurahan: "Ngesrep",
-      puskesmas: "Ngesrep",
-    },
-    {
-      nama: "KARTIKA PAKSI",
-      kecamatan: "Banyumanik",
-      kelurahan: "Ngesrep",
-      puskesmas: "Ngesrep",
-    },
-    {
-      nama: "TUNAS HARAPAN",
-      kecamatan: "Banyumanik",
-      kelurahan: "Tinjomoyo",
-      puskesmas: "Ngesrep",
-    },
-    {
-      nama: "TANJUNGSARI",
-      kecamatan: "Banyumanik",
-      kelurahan: "Sumurboto",
-      puskesmas: "Ngesrep",
-    },
-    {
-      nama: "CHERRY",
-      kecamatan: "Banyumanik",
-      kelurahan: "Sumurboto",
-      puskesmas: "Ngesrep",
-    },
-    {
-      nama: "MAWAR",
-      kecamatan: "Banyumanik",
-      kelurahan: "Tinjomoyo",
-      puskesmas: "Ngesrep",
-    },
-    {
-      nama: "MELATI",
-      kecamatan: "Candisari",
-      kelurahan: "Jatingaleh",
-      puskesmas: "Candisari",
-    },
-    {
-      nama: "KAMBOJA",
-      kecamatan: "Candisari",
-      kelurahan: "Karangrejo",
-      puskesmas: "Candisari",
-    },
-    {
-      nama: "SERUNI",
-      kecamatan: "Candisari",
-      kelurahan: "Jomblang",
-      puskesmas: "Candisari",
-    },
-    {
-      nama: "FLAMBOYAN",
-      kecamatan: "Candisari",
-      kelurahan: "Jatingaleh",
-      puskesmas: "Candisari",
-    },
-    {
-      nama: "ANGGREK",
-      kecamatan: "Candisari",
-      kelurahan: "Karangrejo",
-      puskesmas: "Candisari",
-    },
-    {
-      nama: "TULIP",
-      kecamatan: "Candisari",
-      kelurahan: "Jomblang",
-      puskesmas: "Candisari",
-    },
-    {
-      nama: "BUNGA PUTIH",
-      kecamatan: "Gajahmungkur",
-      kelurahan: "Lempongsari",
-      puskesmas: "Gajahmungkur",
-    },
-    {
-      nama: "BOUGENVILLE",
-      kecamatan: "Gajahmungkur",
-      kelurahan: "Gajahmungkur",
-      puskesmas: "Gajahmungkur",
-    },
-    {
-      nama: "DAHLIA",
-      kecamatan: "Gajahmungkur",
-      kelurahan: "Karangrejo",
-      puskesmas: "Gajahmungkur",
-    },
-    {
-      nama: "TERATAI",
-      kecamatan: "Gajahmungkur",
-      kelurahan: "Karangrejo",
-      puskesmas: "Gajahmungkur",
-    },
-    {
-      nama: "KEBAYA",
-      kecamatan: "Gunungpati",
-      kelurahan: "Ngijo",
-      puskesmas: "Gunungpati",
-    },
-    {
-      nama: "DAISY",
-      kecamatan: "Gunungpati",
-      kelurahan: "Mangunsari",
-      puskesmas: "Gunungpati",
-    },
-    {
-      nama: "SEKAR ARUM",
-      kecamatan: "Gunungpati",
-      kelurahan: "Cepoko",
-      puskesmas: "Gunungpati",
-    },
-    {
-      nama: "KIRANA",
-      kecamatan: "Gunungpati",
-      kelurahan: "Sekaran",
-      puskesmas: "Gunungpati",
-    },
-    {
-      nama: "KENANGA",
-      kecamatan: "Gunungpati",
-      kelurahan: "Sekaran",
-      puskesmas: "Gunungpati",
-    },
-    {
-      nama: "LILLY",
-      kecamatan: "Mijen",
-      kelurahan: "Mijen",
-      puskesmas: "Mijen",
-    },
-    {
-      nama: "TANJUNG",
-      kecamatan: "Mijen",
-      kelurahan: "Jatibarang",
-      puskesmas: "Mijen",
-    },
-    {
-      nama: "KEMUNING",
-      kecamatan: "Mijen",
-      kelurahan: "Wonolopo",
-      puskesmas: "Mijen",
-    },
-    {
-      nama: "AYU",
-      kecamatan: "Mijen",
-      kelurahan: "Tambangan",
-      puskesmas: "Mijen",
-    },
-    {
-      nama: "ALAMANDA",
-      kecamatan: "Mijen",
-      kelurahan: "Tambangan",
-      puskesmas: "Mijen",
-    },
-    {
-      nama: "KRISAN",
-      kecamatan: "Ngaliyan",
-      kelurahan: "Wonosari",
-      puskesmas: "Ngaliyan",
-    },
-    {
-      nama: "LOVINA",
-      kecamatan: "Ngaliyan",
-      kelurahan: "Tambakaji",
-      puskesmas: "Ngaliyan",
-    },
-    {
-      nama: "PALM",
-      kecamatan: "Ngaliyan",
-      kelurahan: "Tambakaji",
-      puskesmas: "Ngaliyan",
-    },
-    {
-      nama: "JATILAWANG",
-      kecamatan: "Ngaliyan",
-      kelurahan: "Wonosari",
-      puskesmas: "Ngaliyan",
-    },
-    {
-      nama: "SUMBER SARI",
-      kecamatan: "Pedurungan",
-      kelurahan: "Tlogosari",
-      puskesmas: "Pedurungan",
-    },
-    {
-      nama: "DAMAR WULAN",
-      kecamatan: "Pedurungan",
-      kelurahan: "Sendangmulyo",
-      puskesmas: "Pedurungan",
-    },
-    {
-      nama: "BANYUASIN",
-      kecamatan: "Pedurungan",
-      kelurahan: "Sendangmulyo",
-      puskesmas: "Pedurungan",
-    },
-    {
-      nama: "NUSA INDAH",
-      kecamatan: "Pedurungan",
-      kelurahan: "Gemah",
-      puskesmas: "Pedurungan",
-    },
-    {
-      nama: "MANDIRI",
-      kecamatan: "Pedurungan",
-      kelurahan: "Gemah",
-      puskesmas: "Pedurungan",
-    },
-    {
-      nama: "RAJAWALI",
-      kecamatan: "Semarang Barat",
-      kelurahan: "Karangayu",
-      puskesmas: "Semarang Barat",
-    },
-    {
-      nama: "ELANG",
-      kecamatan: "Semarang Barat",
-      kelurahan: "Karangayu",
-      puskesmas: "Semarang Barat",
-    },
-    {
-      nama: "GARUDA",
-      kecamatan: "Semarang Barat",
-      kelurahan: "Kembangarum",
-      puskesmas: "Semarang Barat",
-    },
-    {
-      nama: "MERPATI",
-      kecamatan: "Semarang Barat",
-      kelurahan: "Kembangarum",
-      puskesmas: "Semarang Barat",
-    },
-    {
-      nama: "KUNTI",
-      kecamatan: "Semarang Timur",
-      kelurahan: "Gayamsari",
-      puskesmas: "Semarang Timur",
-    },
-    {
-      nama: "SRIKANDI",
-      kecamatan: "Semarang Timur",
-      kelurahan: "Gayamsari",
-      puskesmas: "Semarang Timur",
-    },
-    {
-      nama: "BIMA",
-      kecamatan: "Semarang Timur",
-      kelurahan: "Sambirejo",
-      puskesmas: "Semarang Timur",
-    },
-    {
-      nama: "DURGA",
-      kecamatan: "Semarang Timur",
-      kelurahan: "Karangtempel",
-      puskesmas: "Semarang Timur",
-    },
-    {
-      nama: "PUTRI",
-      kecamatan: "Semarang Utara",
-      kelurahan: "Bulu Lor",
-      puskesmas: "Semarang Utara",
-    },
-    {
-      nama: "RAJA WALI",
-      kecamatan: "Semarang Utara",
-      kelurahan: "Panggung Lor",
-      puskesmas: "Semarang Utara",
-    },
-    {
-      nama: "ARJUNA",
-      kecamatan: "Semarang Utara",
-      kelurahan: "Bandarharjo",
-      puskesmas: "Semarang Utara",
-    },
-    {
-      nama: "NAGA",
-      kecamatan: "Semarang Utara",
-      kelurahan: "Panggung Lor",
-      puskesmas: "Semarang Utara",
-    },
-  ];
-
-  // State for search, pagination, and entries per page
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [entriesPerPage, setEntriesPerPage] = useState(10);
 
-  // Filtering the data based on the search
-  const filteredData = data.filter(
+  const filteredData = DummyDataPosyandu.filter(
     (item) =>
       item.nama.toLowerCase().includes(search.toLowerCase()) ||
       item.kecamatan.toLowerCase().includes(search.toLowerCase()) ||
@@ -328,13 +17,11 @@ const DataPosyandu = () => {
       item.puskesmas.toLowerCase().includes(search.toLowerCase())
   );
 
-  // Calculate the number of pages needed
   const totalPages = Math.ceil(filteredData.length / entriesPerPage);
   const startIndex = (currentPage - 1) * entriesPerPage;
   const endIndex = startIndex + entriesPerPage;
   const currentData = filteredData.slice(startIndex, endIndex);
 
-  // Handle pagination change
   const handlePrevious = () => {
     if (currentPage > 1) setCurrentPage(currentPage - 1);
   };
@@ -345,7 +32,7 @@ const DataPosyandu = () => {
 
   const handleEntriesChange = (e) => {
     setEntriesPerPage(parseInt(e.target.value, 10));
-    setCurrentPage(1); // Reset to page 1 when changing entries per page
+    setCurrentPage(1);
   };
 
   return (
