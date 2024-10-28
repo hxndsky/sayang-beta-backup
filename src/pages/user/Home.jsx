@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   FaChevronDown,
   FaChevronUp,
   FaStar,
+  FaChevronRight,
+  FaChevronLeft,
 } from "react-icons/fa";
 import DataKegiatan from "./DataKegiatan";
 import Header from "../../components/user/Header";
@@ -16,18 +18,18 @@ const Home = () => {
     setActiveIndex(activeIndex === index ? null : index); // Toggle logic, if clicked again it will close
   };
 
+  // State untuk melacak testimonial yang sedang ditampilkan
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Efek untuk mengganti testimonial otomatis setiap 5 detik
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex(
-        (prevIndex) => (prevIndex === 2 ? 0 : prevIndex + 1) // karena ada 3 item
-      );
-    }, 5000); // Ganti setiap 5 detik
+  // Fungsi untuk menggeser testimonial ke kanan
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % 3); // Sesuaikan jumlah testimonial
+  };
 
-    return () => clearInterval(interval);
-  }, []);
+  // Fungsi untuk menggeser testimonial ke kiri
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + 3) % 3); // Sesuaikan jumlah testimonial
+  };
 
   return (
     <>
@@ -125,6 +127,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+
       {/* Kegiatan */}
       <section id="kegiatan" className="bg-white">
         <div
@@ -138,7 +141,8 @@ const Home = () => {
             </div>
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {DataKegiatan.map((kegiatan) => (
+            {/* Menampilkan maksimal 4 kegiatan */}
+            {DataKegiatan.slice(0, 4).map((kegiatan) => (
               <Link
                 key={kegiatan.id}
                 to={`/kegiatan/${kegiatan.slug}`}
@@ -150,11 +154,7 @@ const Home = () => {
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
-                  <h3
-                    className={`text-lg font-semibold ${
-                      activeIndex === 0 ? "text-[#EC8305]" : "text-gray-900"
-                    }`}
-                  >
+                  <h3 className="text-lg font-semibold text-gray-900">
                     {kegiatan.title}
                   </h3>
                   <p className="text-sm text-[#024CAA] mt-2">{kegiatan.date}</p>
@@ -172,6 +172,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+
       {/* Tentang Kami */}
       <section className="bg-white py-16" id="tentang">
         <div className="mx-auto flex flex-col lg:flex-row items-center sm:px-6 lg:px-8 xl:px-36 xxl:px-72">
@@ -229,7 +230,7 @@ const Home = () => {
       {/* FAQ */}
       <section id="#faq" className="bg-white">
         <div
-          className="py-16 pb-28 xl:px-36 sm:px-6 lg:px-8 xxl:px-72"
+          className="py-16 pb-20 xl:px-36 sm:px-6 lg:px-8 xxl:px-72"
           data-aos="fade-up"
         >
           <div className="flex items-center justify-start w-full mb-8">
@@ -406,96 +407,137 @@ const Home = () => {
       </section>
 
       {/* Testimoni */}
-      <section className="bg-[#F9FAFB] py-16 px-6 xl:px-36 xxl:px-72">
-        <h2 className="text-3xl font-bold text-[#EC8305] mb-8 text-center">
-          Testimoni
-        </h2>
-        <div className="relative flex justify-center items-center overflow-hidden">
-          <div className="w-full max-w-lg p-4 transition-transform duration-500 ease-in-out">
-            {/* Testimoni yang Aktif */}
-            {currentIndex === 0 && (
-              <div className="text-center">
-                <img
-                  src="https://i.ibb.co/ZYW3VTp/brown-profile.jpg"
-                  alt="Ayu Saraswati"
-                  className="w-16 h-16 mx-auto rounded-full object-cover mb-4"
-                />
-                <p className="text-lg italic text-gray-700 mb-4">
-                  "Layanan Sayang Beta sangat membantu! Saya merasa lebih
-                  tenang dan bersemangat untuk menjalani hari."
-                </p>
-                <div className="flex justify-center text-yellow-500 mb-4">
-                  {Array(5)
-                    .fill()
-                    .map((_, i) => (
-                      <FaStar key={i} />
-                    ))}
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900">
-                  Ayu Saraswati
-                </h3>
-              </div>
-            )}
-            {currentIndex === 1 && (
-              <div className="text-center">
-                <img
-                  src="https://i.ibb.co/8bPPkc4/blue-profile.jpg"
-                  alt="Budi Santoso"
-                  className="w-16 h-16 mx-auto rounded-full object-cover mb-4"
-                />
-                <p className="text-lg italic text-gray-700 mb-4">
-                  "Konselor di Sayang Beta sangat profesional dan membantu saya
-                  menemukan solusi."
-                </p>
-                <div className="flex justify-center text-yellow-500 mb-4">
-                  {Array(4)
-                    .fill()
-                    .map((_, i) => (
-                      <FaStar key={i} />
-                    ))}
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900">
-                  Budi Santoso
-                </h3>
-              </div>
-            )}
-            {currentIndex === 2 && (
-              <div className="text-center">
-                <img
-                  src="https://i.ibb.co/2d7bH8D/green-profile.jpg"
-                  alt="Citra Lestari"
-                  className="w-16 h-16 mx-auto rounded-full object-cover mb-4"
-                />
-                <p className="text-lg italic text-gray-700 mb-4">
-                  "Dengan bantuan Sayang Beta, saya lebih memahami diri saya
-                  dan menemukan tujuan hidup yang lebih baik."
-                </p>
-                <div className="flex justify-center text-yellow-500 mb-4">
-                  {Array(5)
-                    .fill()
-                    .map((_, i) => (
-                      <FaStar key={i} />
-                    ))}
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900">
-                  Citra Lestari
-                </h3>
-              </div>
-            )}
+      <section id="testimoni" className="bg-white">
+        <div className="flex flex-col md:flex-row items-start gap-8 py-16 pb-20 xl:px-36 sm:px-6 lg:px-8 xxl:px-72">
+          {/* Bagian Kiri (Judul dan Deskripsi) */}
+          <div className="md:w-1/3">
+            <h2 className="text-4xl font-bold text-[#EC8305] mb-4">
+              Testimonial
+            </h2>
+            <p className="text-gray-500">
+              Lorem ipsum dolor sit amet consectetur adipiscing elit semper
+              dalar elementum tempus hac tellus libero.
+            </p>
           </div>
-        </div>
 
-        {/* Indikator Bawah */}
-        <div className="flex justify-center mt-6 space-x-2">
-          {[0, 1, 2].map((index) => (
-            <button
-              key={index}
-              className={`h-2 w-2 rounded-full transition-all duration-300 ${
-                index === currentIndex ? "bg-[#EC8305]" : "bg-gray-300"
-              }`}
-              onClick={() => setCurrentIndex(index)}
-            ></button>
-          ))}
+          {/* Divider Vertikal */}
+          <div className="hidden lg:block mx-8">
+            <div className="h-56 w-px bg-gray-300" data-aos="fade-up"></div>
+          </div>
+
+          {/* Bagian Testimoni */}
+          <div className="md:w-2/3 relative overflow-hidden">
+            <div
+              className="flex transition-transform duration-500"
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            >
+              {/* Testimonial Card 1 */}
+              <div className="w-full md:w-1/2 flex-shrink-0 flex flex-col gap-4">
+                <div className="flex items-center text-[#EC8305]">
+                  {[...Array(5)].map((_, i) => (
+                    <FaStar key={i} />
+                  ))}
+                </div>
+                <p className="text-gray-600">
+                  “Lorem ipsum dolor sit amet consectetur adipiscing lectus a
+                  nunc mauris scelerisque sed egestas pharetraol quis pharetra
+                  arcu pharetra blandit.”
+                </p>
+                <div>
+                  <p className="text-gray-900 font-semibold">John Carter</p>
+                  <p className="text-blue-500">Web Designer</p>
+                </div>
+              </div>
+
+              {/* Testimonial Card 2 */}
+              <div className="w-full md:w-1/2 flex-shrink-0 flex flex-col gap-4">
+                <div className="flex items-center text-[#EC8305]">
+                  {[...Array(5)].map((_, i) => (
+                    <FaStar key={i} />
+                  ))}
+                </div>
+                <p className="text-gray-600">
+                  “Lorem ipsum dolor sit amet consectetur adipiscing lectus a
+                  nunc mauris scelerisque sed egestas pharetraol quis pharetra
+                  arcu pharetra blandit.”
+                </p>
+                <div>
+                  <p className="text-gray-900 font-semibold">Emily Smith</p>
+                  <p className="text-blue-500">Product Manager</p>
+                </div>
+              </div>
+
+              {/* Testimonial Card 3 */}
+              <div className="w-full md:w-1/2 flex-shrink-0 flex flex-col gap-4">
+                <div className="flex items-center text-[#EC8305]">
+                  {[...Array(5)].map((_, i) => (
+                    <FaStar key={i} />
+                  ))}
+                </div>
+                <p className="text-gray-600">
+                  “Lorem ipsum dolor sit amet consectetur adipiscing lectus a
+                  nunc mauris scelerisque sed egestas pharetraol quis pharetra
+                  arcu pharetra blandit.”
+                </p>
+                <div>
+                  <p className="text-gray-900 font-semibold">Michael Johnson</p>
+                  <p className="text-blue-500">Software Engineer</p>
+                </div>
+              </div>
+
+              {/* Testimonial Card 4 */}
+              <div className="w-full md:w-1/2 flex-shrink-0 flex flex-col gap-4">
+                <div className="flex items-center text-[#EC8305]">
+                  {[...Array(5)].map((_, i) => (
+                    <FaStar key={i} />
+                  ))}
+                </div>
+                <p className="text-gray-600">
+                  “Lorem ipsum dolor sit amet consectetur adipiscing lectus a
+                  nunc mauris scelerisque sed egestas pharetraol quis pharetra
+                  arcu pharetra blandit.”
+                </p>
+                <div>
+                  <p className="text-gray-900 font-semibold">Michael Johnson</p>
+                  <p className="text-blue-500">Software Engineer</p>
+                </div>
+              </div>
+
+              {/* Testimonial Card 5 */}
+              <div className="w-full md:w-1/2 flex-shrink-0 flex flex-col gap-4">
+                <div className="flex items-center text-[#EC8305]">
+                  {[...Array(5)].map((_, i) => (
+                    <FaStar key={i} />
+                  ))}
+                </div>
+                <p className="text-gray-600">
+                  “Lorem ipsum dolor sit amet consectetur adipiscing lectus a
+                  nunc mauris scelerisque sed egestas pharetraol quis pharetra
+                  arcu pharetra blandit.”
+                </p>
+                <div>
+                  <p className="text-gray-900 font-semibold">Michael Johnson</p>
+                  <p className="text-blue-500">Software Engineer</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Tombol Panah */}
+            <div className="absolute top-2/3 transform -translate-y-1/2 flex gap-4 right-4">
+              <button
+                onClick={handlePrev}
+                className="border border-gray-300 rounded-full p-2 hover:bg-[#EC8305] hover:text-white transition-colors"
+              >
+                <FaChevronLeft />
+              </button>
+              <button
+                onClick={handleNext}
+                className="border border-gray-300 rounded-full p-2 hover:bg-[#EC8305] hover:text-white transition-colors"
+              >
+                <FaChevronRight />
+              </button>
+            </div>
+          </div>
         </div>
       </section>
       <Footer />
