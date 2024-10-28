@@ -421,7 +421,7 @@ const Home = () => {
                   className="w-16 h-16 mx-auto rounded-full object-cover mb-4"
                 />
                 <p className="text-lg italic text-gray-700 mb-4">
-                  "Layanan Rumah Pelita sangat membantu! Saya merasa lebih
+                  "Layanan Sayang Beta sangat membantu! Saya merasa lebih
                   tenang dan bersemangat untuk menjalani hari."
                 </p>
                 <div className="flex justify-center text-yellow-500 mb-4">
@@ -444,7 +444,7 @@ const Home = () => {
                   className="w-16 h-16 mx-auto rounded-full object-cover mb-4"
                 />
                 <p className="text-lg italic text-gray-700 mb-4">
-                  "Konselor di Rumah Pelita sangat profesional dan membantu saya
+                  "Konselor di Sayang Beta sangat profesional dan membantu saya
                   menemukan solusi."
                 </p>
                 <div className="flex justify-center text-yellow-500 mb-4">
@@ -467,7 +467,7 @@ const Home = () => {
                   className="w-16 h-16 mx-auto rounded-full object-cover mb-4"
                 />
                 <p className="text-lg italic text-gray-700 mb-4">
-                  "Dengan bantuan Rumah Pelita, saya lebih memahami diri saya
+                  "Dengan bantuan Sayang Beta, saya lebih memahami diri saya
                   dan menemukan tujuan hidup yang lebih baik."
                 </p>
                 <div className="flex justify-center text-yellow-500 mb-4">

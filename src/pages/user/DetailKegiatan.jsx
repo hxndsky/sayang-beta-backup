@@ -26,6 +26,11 @@ const DetailKegiatan = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/kegiatan" className="hover:text-[#EC8305]">
+                  Kegiatan
+                </Link>
+              </li>
+              <li>
                 <Link className="font-semibold text-white">
                   {kegiatan.title}
                 </Link>
