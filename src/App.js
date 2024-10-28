@@ -17,6 +17,7 @@ import ScrollToTop from './components/user/ScrollToTop';
 import Home from './pages/user/Home';
 import Kegiatan from './pages/user/Kegiatan';
 import DetailKegiatan from './pages/user/DetailKegiatan';
+import MediaInformasi from './pages/user/MediaInformasi';
 import MediaVideo from './pages/user/MediaVideo';
 import MediaMajalah from './pages/user/MediaMajalah';
 import MediaInfografis from './pages/user/MediaInfografis';
@@ -40,12 +41,13 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route path="/kegiatan" element={<Kegiatan />} />
             <Route path="/kegiatan/:slug" element={<DetailKegiatan />} />
-            <Route path="/media/1" element={<MediaVideo />} />
-            <Route path="/media/2" element={<MediaMajalah />} />
-            <Route path="/media/3" element={<MediaInfografis />} />
-            <Route path="/media/4" element={<MediaArtikel />} />
-            <Route path="/data/1" element={<DataDokter />} />
-            <Route path="/data/2" element={<DataPosyandu />} />
+            <Route path="/media-informasi" element={<MediaInformasi />} />
+            <Route path="/media-informasi/video" element={<MediaVideo />} />
+            <Route path="/media-informasi/majalah" element={<MediaMajalah />} />
+            <Route path="/media-informasi/infografis" element={<MediaInfografis />} />
+            <Route path="/media-informasi/artikel-kesehatan" element={<MediaArtikel />} />
+            <Route path="/data/data-dokter" element={<DataDokter />} />
+            <Route path="/data/data-posyandu" element={<DataPosyandu />} />
             <Route path="/masuk" element={<Login />} />
             <Route path="/buat-akun" element={<Register />} />
             <Route path="/lupa-katasandi" element={<ForgotPass />} />

@@ -93,7 +93,7 @@ const Header = () => {
                 FAQ
               </Link>
               <Link
-                to="#mediainformasi"
+                to="/media-informasi"
                 className="block text-black hover:text-[#EC8305] p-2 rounded-sm"
               >
                 Media Informasi
@@ -157,13 +157,13 @@ const Header = () => {
                 </summary>
                 <div className="pl-6 mt-2 space-y-2">
                   <Link
-                    to="/data/1"
+                    to="/data/data-dokter"
                     className="block text-black hover:text-[#EC8305] p-2 rounded-sm"
                   >
                     Data Dokter Spesialis Anak Kota Semarang
                   </Link>
                   <Link
-                    to="/data/2"
+                    to="/data/data-posyandu"
                     className="block text-black hover:text-[#EC8305] p-2 rounded-sm"
                   >
                     Data Posyandu di Kota Semarang
@@ -225,7 +225,7 @@ const Header = () => {
             FAQ
           </Link>
           <Link
-            to="#mediainformasi"
+            to="/media-informasi"
             className="text-black hover:text-[#EC8305] px-2 py-2 rounded-sm transition duration-200"
           >
             Media Informasi
@@ -295,13 +295,13 @@ const Header = () => {
             </label>
             <div className="dropdown-menu dropdown-menu-bottom-right mt-2 bg-white text-black shadow-lg rounded-sm">
               <Link
-                to="/data/1"
+                to="/data/data-dokter"
                 className="block px-4 py-2 hover:bg-[#F9FAFB] transition duration-200"
               >
                 Data Dokter Spesialis Anak Kota Semarang
               </Link>
               <Link
-                to="/data/2"
+                to="/data/data-posyandu"
                 className="block px-4 py-2 hover:bg-[#F9FAFB] transition duration-200"
               >
                 Data Posyandu di Kota Semarang

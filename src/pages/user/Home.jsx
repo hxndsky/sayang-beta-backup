@@ -67,7 +67,7 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Card 1 */}
             <Link
-              to="/media/1"
+              to="/media-informasi/video"
               className="block p-6 bg-white border border-gray-200 rounded-sm shadow-sm hover:border-[#024CAA] hover:shadow-lg transition relative"
             >
               <h3 className="mb-2 text-2xl font-semibold text-gray-900">
@@ -82,7 +82,7 @@ const Home = () => {
 
             {/* Card 2 */}
             <Link
-              to="/media/2"
+              to="/media-informasi/infografis"
               className="block p-6 bg-white border border-gray-200 rounded-sm shadow-sm hover:border-[#024CAA] hover:shadow-lg transition relative"
             >
               <h3 className="mb-2 text-2xl font-semibold text-gray-900">
@@ -97,7 +97,7 @@ const Home = () => {
 
             {/* Card 3 */}
             <Link
-              to="/media/3"
+              to="/media-informasi/majalah"
               className="block p-6 bg-white border border-gray-200 rounded-sm shadow-sm hover:border-[#024CAA] hover:shadow-lg transition relative"
             >
               <h3 className="mb-2 text-2xl font-semibold text-gray-900">
@@ -112,7 +112,7 @@ const Home = () => {
 
             {/* Card 4 */}
             <Link
-              to="/media/4"
+              to="/media-informasi/artikel-kesehatan"
               className="block p-6 bg-white border border-gray-200 rounded-sm shadow-sm hover:border-[#024CAA] hover:shadow-lg transition relative"
             >
               <h3 className="mb-2 text-2xl font-semibold text-gray-900">
