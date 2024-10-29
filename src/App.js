@@ -21,8 +21,10 @@ import DetailKegiatan from './pages/user/DetailKegiatan';
 // MEDIA INFORMASI
 import MediaVideo from './pages/user/MediaVideo';
 import MediaMajalah from './pages/user/MediaMajalah';
+import DetailMajalah from './pages/user/DetailMajalah';
 import MediaInfografis from './pages/user/MediaInfografis';
 import MediaArtikel from './pages/user/MediaArtikel';
+import DetailArtikel from './pages/user/DetailArtikel';
 // LAYANAN
 import LayananRumahPelita from './pages/user/LayananRumahPelita';
 import LayananRumahGizi from './pages/user/LayananRumahGizi';
@@ -50,8 +52,10 @@ function App() {
             {/* MEDIA */}
             <Route path="/media-informasi/video" element={<MediaVideo />} />
             <Route path="/media-informasi/majalah" element={<MediaMajalah />} />
+            <Route path="/media-informasi/majalah/:slug" element={<DetailMajalah />} />
             <Route path="/media-informasi/infografis" element={<MediaInfografis />} />
             <Route path="/media-informasi/artikel-kesehatan" element={<MediaArtikel />} />
+            <Route path="/media-informasi/artikel-kesehatan/:slug" element={<DetailArtikel />} />
             {/* LAYANAN */}
             <Route path="/layanan/rumah-penanganan-stunting-lintas-sektor-bagi-baduta" element={<LayananRumahPelita />} />
             <Route path="/layanan/rumah-gizi-pelangi-nusantara" element={<LayananRumahGizi />} />

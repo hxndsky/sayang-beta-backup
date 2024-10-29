@@ -78,22 +78,22 @@ const MediaArtikel = () => {
 
       <section className="bg-white py-12 xxl:px-72 xl:px-36 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {DummyArtikel.map((kegiatan) => (
+          {DummyArtikel.map((artikel) => (
             <Link
-              key={kegiatan.id}
-              to={`/kegiatan/${kegiatan.slug}`}
+              key={artikel.id}
+              to={`/media-informasi/artikel-kesehatan/${artikel.slug}`}
               className="bg-white shadow-md rounded-sm overflow-hidden transition-shadow duration-300 hover:shadow-lg block"
             >
               <img
-                src={kegiatan.imageUrl}
-                alt={kegiatan.title}
+                src={artikel.imageUrl}
+                alt={artikel.title}
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
                 <h3 className="text-lg font-semibold text-gray-900">
-                  {kegiatan.title}
+                  {artikel.title}
                 </h3>
-                <p className="text-sm text-[#024CAA] mt-2">{kegiatan.date}</p>
+                <p className="text-sm text-[#024CAA] mt-2">{artikel.date}</p>
               </div>
             </Link>
           ))}

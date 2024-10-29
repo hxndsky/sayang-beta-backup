@@ -1,16 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
-import DummyDataKegiatan from "../../assets/dummy/DummyDataKegiatan";
+import { Link, useParams } from "react-router-dom";
+import { FaEye } from "react-icons/fa";
+import DummyMajalah from "../../assets/dummy/DummyMajalah";
 import Header from "../../components/user/Header";
 import Footer from "../../components/user/Footer";
 
-const DetailKegiatan = () => {
+const DetailMajalah = () => {
   const { slug } = useParams();
-  const kegiatan = DummyDataKegiatan.find((item) => item.slug === slug);
+  const majalah = DummyMajalah.find((item) => item.slug === slug);
 
-  if (!kegiatan) {
-    return <p>Kegiatan tidak ditemukan</p>;
+  if (!majalah) {
+    return <p>Majalah tidak ditemukan</p>;
   }
 
   return (
@@ -26,34 +26,50 @@ const DetailKegiatan = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/kegiatan" className="hover:text-[#EC8305]">
-                  Kegiatan
+                <Link
+                  to="/media-informasi/majalah"
+                  className="hover:text-[#EC8305]"
+                >
+                  Majalah
                 </Link>
               </li>
               <li>
                 <Link className="font-semibold text-white">
-                  {kegiatan.title}
+                  {majalah.title}
                 </Link>
               </li>
             </ul>
           </div>
           <h1 className="w-3/4 text-5xl font-bold pt-6 text-white">
-            {kegiatan.title}
+            {majalah.title}
           </h1>
         </div>
       </section>
 
       <section>
         <div className="pb-8 pt-12 bg-white xxl:px-72 xl:px-36 sm:px-6 lg:px-8 text-lg">
-          <p className="text-black pb-4">
-            <span className="font-semibold">Tanggal Diposting: </span>
-            {kegiatan.date}
-          </p>
+          <div className="flex items-center justify-between text-gray-500 text-sm mb-4">
+            <p>
+              Diposting pada:{" "}
+              <span className="font-medium">{majalah.date}</span>
+            </p>
+            <div className="flex items-center gap-1">
+              <FaEye className="text-gray-400" />
+              <span className="font-medium">771 kali dilihat</span>
+            </div>
+          </div>
+          <div className="flex justify-center mb-12">
+            <img
+              src={majalah.imageUrl}
+              alt="Gambar Majalah"
+              className="rounded-sm shadow-md md:w-3/4 lg:w-2/3"
+            />
+          </div>
           <div className="mt-4 text-gray-800">
-            <p>{kegiatan.content}</p>
+            <p>{majalah.content}</p>
           </div>
           <h2 className="flex items-center gap-4 text-3xl font-bold text-[#EC8305] mt-12">
-            Kegiatan Lainnya
+            Majalah Lainnya
             <div className="flex-grow">
               <hr className="border-gray-300" />
             </div>
@@ -64,17 +80,17 @@ const DetailKegiatan = () => {
       <section>
         <div className="pb-12 bg-white xxl:px-72 xl:px-36 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {DummyDataKegiatan.map((kegiatan) => (
+            {DummyMajalah.slice(0, 4).map((majalah) => (
               <Link
-                to={`/kegiatan/${kegiatan.slug}`} // Ubah link sesuai slug kegiatan
-                key={kegiatan.id}
+                to={`/media-informasi/majalah/${majalah.slug}`}
+                key={majalah.id}
                 className="bg-white shadow-md rounded-sm overflow-hidden transition-shadow duration-300 hover:shadow-lg block"
               >
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-gray-900">
-                    {kegiatan.title}
+                    {majalah.title}
                   </h3>
-                  <p className="text-sm text-[#024CAA] mt-4">{kegiatan.date}</p>
+                  <p className="text-sm text-[#024CAA] mt-4">{majalah.date}</p>
                 </div>
               </Link>
             ))}
@@ -86,4 +102,4 @@ const DetailKegiatan = () => {
   );
 };
 
-export default DetailKegiatan;
+export default DetailMajalah;
