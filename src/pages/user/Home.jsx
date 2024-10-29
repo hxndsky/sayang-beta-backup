@@ -61,7 +61,7 @@ const Home = () => {
               Media Informasi
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
             <Link
               to="/media-informasi/video"
               className="block p-6 bg-white border border-gray-200 rounded-sm shadow-sm hover:border-[#024CAA] hover:shadow-lg transition relative"
@@ -69,11 +69,6 @@ const Home = () => {
               <h3 className="mb-2 text-2xl font-semibold text-gray-900">
                 Video
               </h3>
-              <p className="text-sm text-gray-600">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                voluptas quia, pariatur cumque quasi dicta perferendis eum quis
-                blanditiis officia corrupti tempora eaque error eligendi.
-              </p>
             </Link>
 
             <Link
@@ -83,11 +78,6 @@ const Home = () => {
               <h3 className="mb-2 text-2xl font-semibold text-gray-900">
                 Infografis
               </h3>
-              <p className="text-sm text-gray-600">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                voluptas quia, pariatur cumque quasi dicta perferendis eum quis
-                blanditiis officia corrupti tempora eaque error eligendi.
-              </p>
             </Link>
 
             <Link
@@ -97,11 +87,6 @@ const Home = () => {
               <h3 className="mb-2 text-2xl font-semibold text-gray-900">
                 Majalah
               </h3>
-              <p className="text-sm text-gray-600">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                voluptas quia, pariatur cumque quasi dicta perferendis eum quis
-                blanditiis officia corrupti tempora eaque error eligendi.
-              </p>
             </Link>
 
             <Link
@@ -111,11 +96,6 @@ const Home = () => {
               <h3 className="mb-2 text-2xl font-semibold text-gray-900">
                 Artikel Kesehatan
               </h3>
-              <p className="text-sm text-gray-600">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                voluptas quia, pariatur cumque quasi dicta perferendis eum quis
-                blanditiis officia corrupti tempora eaque error eligendi.
-              </p>
             </Link>
           </div>
         </div>
@@ -391,10 +371,60 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Media Informasi */}
+      <section id="mediainformasi" className="bg-white">
+        <div
+          className="py-16 pt-12 xl:px-36 sm:px-6 lg:px-8 xxl:px-72"
+          data-aos="fade-left"
+        >
+          <div className="flex items-center justify-start w-full mb-8">
+            <div className="flex-grow">
+              <hr className="border-gray-300" />
+            </div>
+            <h2 className="text-4xl font-bold text-[#EC8305] pl-4">Layanan</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+            <Link
+              to="/layanan/rumah-penanganan-stunting-lintas-sektor-bagi-baduta"
+              className="block p-6 bg-white transition relative"
+            >
+              <h3 className="mb-2 text-2xl font-semibold text-gray-900 hover:text-[#EC8305]">
+                Rumah Penanganan Stunting Lintas Sektor Bagi Baduta (Rumah
+                Pelita)
+              </h3>
+              <p className="text-md text-gray-600">
+              Rumah Pelita merupakan inisiasi dari Pemerintah Kota (Pemkot)
+              Semarang sebagai salah satu upaya percepatan penurunan stunting
+              dalam bentuk daycare yang bertujuan meningkatkan pola asuh, asupan
+              makan anak, serta perkembangan anak sehingga bisa tercapai status
+              gizi yang optimal...
+              </p>
+            </Link>
+
+            <Link
+              to="/layanan/rumah-gizi-pelangi-nusantara"
+              className="block p-6 bg-white transition relative"
+            >
+              <h3 className="mb-2 text-2xl font-semibold text-gray-900 hover:text-[#EC8305]">
+                Rumah Gizi Pelangi Nusantara
+              </h3>
+              <p className="text-md text-gray-600">
+                Rumah Gizi Pelangi Nusantara merupakan upaya percepatan
+                penurunan stunting melalui pendekatan continuum of care 1000 HPK
+                melalui upaya promotif preventif (kebun gizi, wisata edukasi
+                bagi remaja dan anak sekolah), upaya kuratif (penanganan balita
+                secara komprehensif di rumah gizi selama 6 bulan), serta upaya
+                penunjang (rumah gizi, dan mobil stunting).
+              </p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Testimoni */}
       <section id="testimoni" className="bg-white">
         <div className="flex flex-col md:flex-row items-start gap-8 py-16 pb-20 xl:px-36 sm:px-6 lg:px-8 xxl:px-72">
-          <div className="md:w-1/3">
+          <div className="md:w-1/3" data-aos="fade-right">
             <h2 className="text-4xl font-bold text-[#EC8305] mb-4">
               Testimonial
             </h2>
@@ -408,7 +438,10 @@ const Home = () => {
             <div className="h-56 w-px bg-gray-300" data-aos="fade-up"></div>
           </div>
 
-          <div className="md:w-2/3 relative overflow-hidden">
+          <div
+            className="md:w-2/3 relative overflow-hidden"
+            data-aos="fade-left"
+          >
             <div
               className="flex transition-transform duration-500"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}

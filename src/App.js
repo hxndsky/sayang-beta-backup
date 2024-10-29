@@ -15,12 +15,18 @@ import ScrollToTop from './components/user/ScrollToTop';
 
 // PAGES
 import Home from './pages/user/Home';
+// KEGIATAN
 import Kegiatan from './pages/user/Kegiatan';
 import DetailKegiatan from './pages/user/DetailKegiatan';
+// MEDIA INFORMASI
 import MediaVideo from './pages/user/MediaVideo';
 import MediaMajalah from './pages/user/MediaMajalah';
 import MediaInfografis from './pages/user/MediaInfografis';
 import MediaArtikel from './pages/user/MediaArtikel';
+// LAYANAN
+import LayananRumahPelita from './pages/user/LayananRumahPelita';
+import LayananRumahGizi from './pages/user/LayananRumahGizi';
+// DATA
 import DataDokter from './pages/user/DataDokter';
 import DataPosyandu from './pages/user/DataPosyandu';
 
@@ -38,14 +44,21 @@ function App() {
           <ScrollToTop />
           <Routes>
             <Route exact path="/" element={<Home />} />
+            {/* KEGIATAN */}
             <Route path="/kegiatan" element={<Kegiatan />} />
             <Route path="/kegiatan/:slug" element={<DetailKegiatan />} />
+            {/* MEDIA */}
             <Route path="/media-informasi/video" element={<MediaVideo />} />
             <Route path="/media-informasi/majalah" element={<MediaMajalah />} />
             <Route path="/media-informasi/infografis" element={<MediaInfografis />} />
             <Route path="/media-informasi/artikel-kesehatan" element={<MediaArtikel />} />
+            {/* LAYANAN */}
+            <Route path="/layanan/rumah-penanganan-stunting-lintas-sektor-bagi-baduta" element={<LayananRumahPelita />} />
+            <Route path="/layanan/rumah-gizi-pelangi-nusantara" element={<LayananRumahGizi />} />
+            {/* DATA */}
             <Route path="/data/data-dokter" element={<DataDokter />} />
             <Route path="/data/data-posyandu" element={<DataPosyandu />} />
+            {/* AUTH */}
             <Route path="/masuk" element={<Login />} />
             <Route path="/buat-akun" element={<Register />} />
             <Route path="/lupa-katasandi" element={<ForgotPass />} />

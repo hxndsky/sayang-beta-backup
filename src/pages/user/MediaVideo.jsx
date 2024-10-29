@@ -36,36 +36,36 @@ const MediaVideo = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
             <Link
               to="/media-informasi/video"
-              className="block p-4 bg-white border border-gray-200 rounded-sm shadow-sm hover:border-[#024CAA] hover:shadow-lg transition relative"
+              className="block p-2 bg-white border border-gray-200 rounded-sm shadow-sm hover:border-[#024CAA] hover:shadow-lg transition relative"
             >
-              <h3 className="mb-1 text-xl font-semibold text-gray-900">
+              <h3 className="mb-1 text-base font-semibold text-gray-900">
                 Video
               </h3>
             </Link>
 
             <Link
               to="/media-informasi/infografis"
-              className="block p-4 bg-white border border-gray-200 rounded-sm shadow-sm hover:border-[#024CAA] hover:shadow-lg transition relative"
+              className="block p-2 bg-white border border-gray-200 rounded-sm shadow-sm hover:border-[#024CAA] hover:shadow-lg transition relative"
             >
-              <h3 className="mb-1 text-xl font-semibold text-gray-900">
+              <h3 className="mb-1 text-base font-semibold text-gray-900">
                 Infografis
               </h3>
             </Link>
 
             <Link
               to="/media-informasi/majalah"
-              className="block p-4 bg-white border border-gray-200 rounded-sm shadow-sm hover:border-[#024CAA] hover:shadow-lg transition relative"
+              className="block p-2 bg-white border border-gray-200 rounded-sm shadow-sm hover:border-[#024CAA] hover:shadow-lg transition relative"
             >
-              <h3 className="mb-1 text-xl font-semibold text-gray-900">
+              <h3 className="mb-1 text-base font-semibold text-gray-900">
                 Majalah
               </h3>
             </Link>
 
             <Link
               to="/media-informasi/artikel-kesehatan"
-              className="block p-4 bg-white border border-gray-200 rounded-sm shadow-sm hover:border-[#024CAA] hover:shadow-lg transition relative"
+              className="block p-2 bg-white border border-gray-200 rounded-sm shadow-sm hover:border-[#024CAA] hover:shadow-lg transition relative"
             >
-              <h3 className="mb-1 text-xl font-semibold text-gray-900">
+              <h3 className="mb-1 text-base font-semibold text-gray-900">
                 Artikel Kesehatan
               </h3>
             </Link>
