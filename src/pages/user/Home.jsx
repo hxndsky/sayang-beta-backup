@@ -420,13 +420,12 @@ const Home = () => {
                   ))}
                 </div>
                 <p className="text-gray-600">
-                  “Lorem ipsum dolor sit amet consectetur adipiscing lectus a
-                  nunc mauris scelerisque sed egestas pharetraol quis pharetra
-                  arcu pharetra blandit.”
+                  “Saya sangat terbantu dengan informasi kesehatan di
+                  SayangBeta. Penjelasannya mudah dipahami dan informatif.”
                 </p>
                 <div>
-                  <p className="text-gray-900 font-semibold">John Carter</p>
-                  <p className="text-blue-500">Web Designer</p>
+                  <p className="text-gray-900 font-semibold">Budi Santoso</p>
+                  <p className="text-blue-500">Guru Sekolah Dasar</p>
                 </div>
               </div>
 
@@ -437,13 +436,12 @@ const Home = () => {
                   ))}
                 </div>
                 <p className="text-gray-600">
-                  “Lorem ipsum dolor sit amet consectetur adipiscing lectus a
-                  nunc mauris scelerisque sed egestas pharetraol quis pharetra
-                  arcu pharetra blandit.”
+                  “SayangBeta sangat membantu saya dalam menjaga kesehatan
+                  keluarga. Tips kesehatannya sangat bermanfaat.”
                 </p>
                 <div>
-                  <p className="text-gray-900 font-semibold">Emily Smith</p>
-                  <p className="text-blue-500">Product Manager</p>
+                  <p className="text-gray-900 font-semibold">Siti Aisyah</p>
+                  <p className="text-blue-500">Ibu Rumah Tangga</p>
                 </div>
               </div>
 
@@ -454,13 +452,12 @@ const Home = () => {
                   ))}
                 </div>
                 <p className="text-gray-600">
-                  “Lorem ipsum dolor sit amet consectetur adipiscing lectus a
-                  nunc mauris scelerisque sed egestas pharetraol quis pharetra
-                  arcu pharetra blandit.”
+                  “Platform SayangBeta membantu saya menemukan informasi yang
+                  akurat tentang kesehatan anak saya.”
                 </p>
                 <div>
-                  <p className="text-gray-900 font-semibold">Michael Johnson</p>
-                  <p className="text-blue-500">Software Engineer</p>
+                  <p className="text-gray-900 font-semibold">Andi Pratama</p>
+                  <p className="text-blue-500">Pengusaha</p>
                 </div>
               </div>
 
@@ -471,13 +468,12 @@ const Home = () => {
                   ))}
                 </div>
                 <p className="text-gray-600">
-                  “Lorem ipsum dolor sit amet consectetur adipiscing lectus a
-                  nunc mauris scelerisque sed egestas pharetraol quis pharetra
-                  arcu pharetra blandit.”
+                  “Informasi di SayangBeta sangat membantu saya dalam memahami
+                  kesehatan secara menyeluruh.”
                 </p>
                 <div>
-                  <p className="text-gray-900 font-semibold">Michael Johnson</p>
-                  <p className="text-blue-500">Software Engineer</p>
+                  <p className="text-gray-900 font-semibold">Dewi Susanti</p>
+                  <p className="text-blue-500">Dokter Umum</p>
                 </div>
               </div>
 
@@ -488,13 +484,12 @@ const Home = () => {
                   ))}
                 </div>
                 <p className="text-gray-600">
-                  “Lorem ipsum dolor sit amet consectetur adipiscing lectus a
-                  nunc mauris scelerisque sed egestas pharetraol quis pharetra
-                  arcu pharetra blandit.”
+                  “Saya selalu merekomendasikan SayangBeta untuk informasi
+                  kesehatan yang terpercaya.”
                 </p>
                 <div>
-                  <p className="text-gray-900 font-semibold">Michael Johnson</p>
-                  <p className="text-blue-500">Software Engineer</p>
+                  <p className="text-gray-900 font-semibold">Rina Amelia</p>
+                  <p className="text-blue-500">Ahli Gizi</p>
                 </div>
               </div>
             </div>

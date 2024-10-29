@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import DataKegiatan from "../../components/dummy/DummyDataKegiatan";
+import DummyDataKegiatan from "../../components/dummy/DummyDataKegiatan";
 import Header from "../../components/user/Header";
 import Footer from "../../components/user/Footer";
 
@@ -28,7 +28,7 @@ const Kegiatan = () => {
 
       <section className="bg-white py-12 xxl:px-72 xl:px-36 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {DataKegiatan.map((kegiatan) => (
+          {DummyDataKegiatan.map((kegiatan) => (
             <Link
               key={kegiatan.id}
               to={`/kegiatan/${kegiatan.slug}`}
