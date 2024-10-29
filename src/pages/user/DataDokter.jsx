@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import DummyDataDokter from "../../components/dummy/DummyDataDokter";
+import DummyDataDokter from "../../assets/dummy/DummyDataDokter";
 import Header from "../../components/user/Header";
 import Footer from "../../components/user/Footer";
 

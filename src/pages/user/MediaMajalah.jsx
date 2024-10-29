@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import DummyMajalah from "../../components/dummy/DummyMajalah";
+import DummyMajalah from "../../assets/dummy/DummyMajalah";
 import Header from "../../components/user/Header";
 import Footer from "../../components/user/Footer";
 

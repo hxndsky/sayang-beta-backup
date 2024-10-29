@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import DummyInfografis from "../../components/dummy/DummyInfografis";
+import DummyInfografis from "../../assets/dummy/DummyInfografis";
 import Header from "../../components/user/Header";
 import Footer from "../../components/user/Footer";
 

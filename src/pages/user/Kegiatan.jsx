@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import DummyDataKegiatan from "../../components/dummy/DummyDataKegiatan";
+import DummyDataKegiatan from "../../assets/dummy/DummyDataKegiatan";
 import Header from "../../components/user/Header";
 import Footer from "../../components/user/Footer";
 

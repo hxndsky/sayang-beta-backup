@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import DummyDataPosyandu from "../../components/dummy/DummyDataPosyandu";
+import DummyDataPosyandu from "../../assets/dummy/DummyDataPosyandu";
 import Header from "../../components/user/Header";
 import Footer from "../../components/user/Footer";
 
