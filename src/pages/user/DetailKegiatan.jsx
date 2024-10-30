@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { FaEye } from "react-icons/fa";
 import DummyDataKegiatan from "../../assets/dummy/DummyDataKegiatan";
 import Header from "../../components/user/Header";
 import Footer from "../../components/user/Footer";
@@ -45,10 +45,23 @@ const DetailKegiatan = () => {
 
       <section>
         <div className="pb-8 pt-12 bg-white xxl:px-72 xl:px-36 sm:px-6 lg:px-8 text-lg">
-          <p className="text-black pb-4">
-            <span className="font-semibold">Tanggal Diposting: </span>
-            {kegiatan.date}
-          </p>
+          <div className="flex items-center justify-between text-gray-500 text-sm mb-4">
+            <p>
+              Diposting pada:{" "}
+              <span className="font-medium">{kegiatan.date}</span>
+            </p>
+            <div className="flex items-center gap-1">
+              <FaEye className="text-gray-400" />
+              <span className="font-medium">771 kali dilihat</span>
+            </div>
+          </div>
+          <div className="flex justify-center mb-12">
+            <img
+              src={kegiatan.imageUrl}
+              alt="Gambar Artikel"
+              className="rounded-sm shadow-md md:w-3/4 lg:w-2/3"
+            />
+          </div>
           <div className="mt-4 text-gray-800">
             <p>{kegiatan.content}</p>
           </div>
@@ -64,7 +77,7 @@ const DetailKegiatan = () => {
       <section>
         <div className="pb-12 bg-white xxl:px-72 xl:px-36 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {DummyDataKegiatan.map((kegiatan) => (
+            {DummyDataKegiatan.slice(0, 4).map((kegiatan) => (
               <Link
                 to={`/kegiatan/${kegiatan.slug}`} // Ubah link sesuai slug kegiatan
                 key={kegiatan.id}

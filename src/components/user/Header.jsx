@@ -8,20 +8,6 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
-  const scrollToTentang = () => {
-    const element = document.getElementById("tentang");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const scrollToFAQ = () => {
-    const element = document.getElementById("faq");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <>
       {/* Navbar for mobile */}
@@ -101,7 +87,8 @@ const Header = () => {
                 Kegiatan
               </Link>
               <Link
-                onClick={scrollToFAQ}
+                to="/"
+                state={{ scrollTo: "faq" }}
                 className="block text-black hover:text-[#EC8305] p-2 rounded-sm"
               >
                 FAQ
@@ -221,7 +208,8 @@ const Header = () => {
                 </div>
               </details>
               <Link
-                onClick={scrollToTentang}
+                to="/"
+                state={{ scrollTo: "tentang" }}
                 className="block text-black hover:text-[#EC8305] p-2 rounded-sm"
               >
                 Tentang
@@ -267,8 +255,9 @@ const Header = () => {
             Kegiatan
           </Link>
           <Link
-            onClick={scrollToFAQ}
-            className="text-black hover:text-[#EC8305] px-2 py-2 rounded-sm transition duration-200"
+            to="/"
+            state={{ scrollTo: "faq" }}
+            className="text-black hover:text-[#EC8305] px-2 py-2 rounded-sm"
           >
             FAQ
           </Link>
@@ -397,7 +386,8 @@ const Header = () => {
           </div>
 
           <Link
-            onClick={scrollToTentang}
+            to="/"
+            state={{ scrollTo: "tentang" }}
             className="text-black hover:text-[#EC8305] px-2 py-2 rounded-sm transition duration-200"
           >
             Tentang

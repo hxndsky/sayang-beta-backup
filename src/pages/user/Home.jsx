@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import {
   FaChevronDown,
   FaChevronUp,
@@ -27,6 +27,26 @@ const Home = () => {
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + 3) % 3);
   };
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollTo === "faq") {
+      const faqSection = document.getElementById("faq");
+      if (faqSection) {
+        faqSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
+  useEffect(() => {
+    if (location.state?.scrollTo === "tentang") {
+      const tentangSection = document.getElementById("tentang");
+      if (tentangSection) {
+        tentangSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
 
   return (
     <>
@@ -371,7 +391,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Media Informasi */}
+      {/* Layanan */}
       <section id="mediainformasi" className="bg-white">
         <div
           className="py-16 pt-12 xl:px-36 sm:px-6 lg:px-8 xxl:px-72"
