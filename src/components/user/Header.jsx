@@ -92,7 +92,7 @@ const Header = () => {
                 to="/"
                 className="block text-black hover:text-[#EC8305] p-2 rounded-sm"
               >
-                Home
+                Beranda
               </Link>
               <Link
                 to="/kegiatan"
@@ -258,7 +258,7 @@ const Header = () => {
             to="/"
             className="text-black hover:text-[#EC8305] px-2 py-2 rounded-sm transition duration-200"
           >
-            Home
+            Beranda
           </Link>
           <Link
             to="/kegiatan"
