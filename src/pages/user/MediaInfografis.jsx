@@ -19,7 +19,7 @@ const MediaInfografis = () => {
               </li>
               <li>
                 <Link className="font-semibold text-white">
-                  Media Infografis
+                  Infografis
                 </Link>
               </li>
             </ul>
@@ -30,10 +30,10 @@ const MediaInfografis = () => {
         </div>
       </section>
 
-{/* Kategori */}
-<section className="bg-white">
+      {/* Kategori */}
+      <section className="bg-white">
         <div
-          className="py-16 pt-8 xl:px-36 sm:px-6 lg:px-8 xxl:px-72"
+          className="pt-8 xl:px-36 sm:px-6 lg:px-8 xxl:px-72"
           data-aos="fade-left"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
@@ -76,7 +76,29 @@ const MediaInfografis = () => {
         </div>
       </section>
 
-      <section className="bg-white py-12 xxl:px-72 xl:px-36 sm:px-6 lg:px-8"></section>
+      <section className="bg-white py-12 xxl:px-72 xl:px-36 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {DummyInfografis.map((infografis) => (
+            <Link
+              key={infografis.id}
+              to={`/media-informasi/infografis/${infografis.slug}`}
+              className="bg-white shadow-md rounded-sm overflow-hidden transition-shadow duration-300 hover:shadow-lg block"
+            >
+              <img
+                src={infografis.imageUrl}
+                alt={infografis.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {infografis.title}
+                </h3>
+                <p className="text-sm text-[#024CAA] mt-2">{infografis.date}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
       <Footer />
     </>
   );
