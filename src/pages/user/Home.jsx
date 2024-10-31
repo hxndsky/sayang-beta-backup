@@ -441,8 +441,7 @@ const Home = () => {
               Testimonial
             </h2>
             <p className="text-gray-500">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit semper
-              dalar elementum tempus hac tellus libero.
+              Berikut adalah beberapa testimonial dari para pengguna Sayang Beta.
             </p>
           </div>
 

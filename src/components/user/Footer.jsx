@@ -11,8 +11,10 @@ const Footer = () => {
             <span className="text-[#EC8305]">Beta</span>
           </h1>
           <p className="text-sm">
-            Lorem ipsum dolor sit amet consectetur dolol drakgonil adipiscing
-            elit aliquam mauris
+            Sayang Beta merupakan aplikasi yang dikembangkan oleh Dinas
+            Kesehatan Kota Semarang untuk pemantauan perkembangan dan
+            pertumbuhan anak serta balita, yang digunakan sebagai salah satu
+            upaya penurunan angka stunting di Kota Semarang.
           </p>
         </div>
 
@@ -57,9 +59,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div>
-          
-        </div>
+        <div></div>
       </div>
 
       <hr className="mt-4 mb-4 text-white opacity-50" />
@@ -70,22 +70,40 @@ const Footer = () => {
           All Rights Reserved
         </p>
         <div className="flex space-x-4 text-lg">
-          <Link to="https://www.facebook.com/dinkeskotasemarang" className="text-white hover:text-[#EC8305]">
+          <Link
+            to="https://www.facebook.com/dinkeskotasemarang"
+            className="text-white hover:text-[#EC8305]"
+          >
             <i className="fab fa-facebook"></i>
           </Link>
-          <Link to="https://twitter.com/dkksemarang" className="text-white hover:text-[#EC8305]">
+          <Link
+            to="https://twitter.com/dkksemarang"
+            className="text-white hover:text-[#EC8305]"
+          >
             <i className="fab fa-twitter"></i>
           </Link>
-          <Link to="https://www.instagram.com/dkksemarang" className="text-white hover:text-[#EC8305]">
+          <Link
+            to="https://www.instagram.com/dkksemarang"
+            className="text-white hover:text-[#EC8305]"
+          >
             <i className="fab fa-instagram"></i>
           </Link>
-          <Link to="https://www.tiktok.com/@dkksemarang" className="text-white hover:text-[#EC8305]">
+          <Link
+            to="https://www.tiktok.com/@dkksemarang"
+            className="text-white hover:text-[#EC8305]"
+          >
             <i className="fab fa-tiktok"></i>
           </Link>
-          <Link to="https://www.youtube.com/channel/UCVL58VGILY3shnpedmPpakg" className="text-white hover:text-[#EC8305]">
+          <Link
+            to="https://www.youtube.com/channel/UCVL58VGILY3shnpedmPpakg"
+            className="text-white hover:text-[#EC8305]"
+          >
             <i className="fab fa-youtube"></i>
           </Link>
-          <Link to="https://dinkes.semarangkota.go.id/" className="text-white hover:text-[#EC8305]">
+          <Link
+            to="https://dinkes.semarangkota.go.id/"
+            className="text-white hover:text-[#EC8305]"
+          >
             <i className="fas fa-globe"></i>
           </Link>
         </div>
