@@ -18,11 +18,6 @@ const LayananRumahGizi = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/kegiatan" className="hover:text-[#EC8305]">
-                  Layanan
-                </Link>
-              </li>
-              <li>
                 <Link className="font-semibold text-white">
                   Rumah Gizi Pelangi Nusantara
                 </Link>

@@ -21,11 +21,6 @@ const LayananRumahPelita = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/kegiatan" className="hover:text-[#EC8305]">
-                  Layanan
-                </Link>
-              </li>
-              <li>
                 <Link className="font-semibold text-white">
                   Rumah Penanganan Stunting Lintas Sektor Bagi Baduta (Rumah
                   Pelita)
