@@ -39,8 +39,11 @@ const DataDokter = () => {
   return (
     <>
       <Header />
-      <section className='bg-[#024CAA]'>
-        <div className="lg:px-6 xxl:px-72 xl:px-36 md:px-4 sm:px-4 pt-24 pb-10" data-aos="fade-down">
+      <section className="bg-[#024CAA]">
+        <div
+          className="lg:px-6 xxl:px-72 xl:px-36 md:px-4 sm:px-4 pt-24 pb-10"
+          data-aos="fade-down"
+        >
           <div className="breadcrumbs text-base">
             <ul>
               <li>
@@ -49,7 +52,9 @@ const DataDokter = () => {
                 </Link>
               </li>
               <li>
-                <Link className="font-semibold text-white">Data Dokter Spesialis Anak Kota Semarang</Link>
+                <Link className="font-semibold text-white">
+                  Data Dokter Spesialis Anak Kota Semarang
+                </Link>
               </li>
             </ul>
           </div>
@@ -61,8 +66,10 @@ const DataDokter = () => {
 
       <section className="bg-white lg:px-6 xxl:px-72 xl:px-36 md:px-4 sm:px-4 pb-8 pt-4 text-black">
         <div className="p-4">
-          <div className="flex flex-col sm:flex-col md:flex-row md:justify-between sm:items-start items-center mb-4 space-y-4 sm:space-y-4 md:space-y-0"
-          data-aos="fade-up">
+          <div
+            className="flex flex-col sm:flex-col md:flex-row md:justify-between sm:items-start items-center mb-4 space-y-4 sm:space-y-4 md:space-y-0"
+            data-aos="fade-up"
+          >
             <div className="flex flex-col sm:flex-row items-start sm:items-center">
               <label className="mr-2">Tampilkan</label>
               <select
@@ -123,11 +130,14 @@ const DataDokter = () => {
             </table>
           </div>
 
-          <div className="flex flex-col sm:flex-col md:flex-row sm:justify-between items-start md:items-center mt-4 space-y-4 sm:space-y-4 md:space-y-0" data-aos="fade-up">
+          <div
+            className="flex flex-col sm:flex-col md:flex-row sm:justify-between items-start md:items-center mt-4 space-y-4 sm:space-y-4 md:space-y-0"
+            data-aos="fade-up"
+          >
             <p>
               Menampilkan {startIndex + 1} hingga{" "}
-              {Math.min(endIndex, filteredData.length)} dari {filteredData.length}{" "}
-              entri
+              {Math.min(endIndex, filteredData.length)} dari{" "}
+              {filteredData.length} entri
             </p>
             <div className="flex justify-center sm:justify-start space-x-2">
               <button

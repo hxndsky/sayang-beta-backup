@@ -52,7 +52,7 @@ const LayananRumahGizi = () => {
             <img
               src="https://sim.sayanganak.semarangkota.go.id/frontend/assets/images/pelangi.jpg"
               alt="Gambar Artikel"
-              className="rounded-sm shadow-md w-full lg:w-full"
+              className="rounded-sm shadow-md md:w-3/4 lg:w-2/3"
             />
           </div>
 
