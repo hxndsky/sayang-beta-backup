@@ -189,27 +189,19 @@ const Home = () => {
               Tentang Kami
             </h2>
             <p className="text-[#263238] mb-10">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Aspernatur nisi atque voluptas possimus ex dolore ab dicta dolor
-              consequatur temporibus. Lorem ipsum, dolor sit amet consectetur
-              adipisicing elit. Ex, vero! Lorem ipsum, dolor sit amet
-              consectetur adipisicing elit. Totam, voluptas. Lorem ipsum dolor
-              sit amet consectetur, adipisicing elit. Voluptates, cumque!
+              Aplikasi untuk mempermudah pemantauan pertumbuhan & perkembangan Balita sehingga dapat menunjang kesehatan anak & memberikan informasi kepada Orang tua secara mudah dan terpercaya.
             </p>
             <ul>
               <li className="mb-2">
                 <h3 className="text-2xl font-semibold text-gray-900">Visi</h3>
                 <p className="text-[#263238] mb-4">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Voluptates, quo! Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Earum, distinctio.
+                Mewujudkan generasi Balita yang sehat dan berkembang optimal melalui pemantauan pertumbuhan dan perkembangan yang mudah, akurat, dan terpercaya bagi setiap orang tua.
                 </p>
               </li>
               <li>
                 <h3 className="text-2xl font-semibold text-gray-900">Misi</h3>
                 <p className="text-[#263238]">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo,
-                  sequi.
+                Misi kami adalah menyediakan platform digital yang praktis dan terstruktur untuk membantu orang tua dalam memantau kesehatan dan perkembangan Balita secara optimal
                 </p>
               </li>
             </ul>
