@@ -66,3 +66,5 @@ module.exports = {
 ```
 npm start
 ```
+6. Figma
+https://www.figma.com/design/0YLMtLayvN7lYBCiToAYBK/Sayang-Beta-(New)?node-id=21-265&t=LUQ391TkahOnbMpH-1
