@@ -39,7 +39,7 @@ const DataPosyandu = () => {
     <>
       <Header />
       <section className="bg-[#024CAA]">
-        <div className="lg:px-6 xxl:px-72 xl:px-36 md:px-4 sm:px-4 pt-24 pb-10">
+        <div className="lg:px-6 xxl:px-72 xl:px-36 md:px-4 sm:px-4 pt-24 pb-10" data-aos="fade-down">
           <div className="breadcrumbs text-base">
             <ul>
               <li>
@@ -101,7 +101,7 @@ const DataPosyandu = () => {
               </thead>
               <tbody>
                 {currentData.map((item, index) => (
-                  <tr key={index} className="hover:bg-[#F0F0F0]">
+                  <tr key={index} className="hover:bg-[#F0F0F0] text-center">
                     <td className="border p-2">{item.nama}</td>
                     <td className="border p-2">{item.kecamatan}</td>
                     <td className="border p-2">{item.kelurahan}</td>

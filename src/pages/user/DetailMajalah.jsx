@@ -17,7 +17,7 @@ const DetailMajalah = () => {
     <>
       <Header />
       <section className="bg-[#024CAA]">
-        <div className="lg:px-6 xxl:px-72 xl:px-36 md:px-4 sm:px-4 pt-24 pb-10">
+        <div className="lg:px-6 xxl:px-72 xl:px-36 md:px-4 sm:px-4 pt-24 pb-10" data-aos="fade-down">
           <div className="breadcrumbs text-base">
             <ul>
               <li>
@@ -48,7 +48,7 @@ const DetailMajalah = () => {
 
       <section>
         <div className="pb-8 pt-12 bg-white xxl:px-72 xl:px-36 sm:px-6 lg:px-8 text-lg">
-          <div className="flex items-center justify-between text-gray-500 text-sm mb-4">
+          <div className="flex items-center justify-between text-gray-500 text-sm mb-4" data-aos="fade-up">
             <p>
               Diposting pada:{" "}
               <span className="font-medium">{majalah.date}</span>
@@ -58,17 +58,17 @@ const DetailMajalah = () => {
               <span className="font-medium">771 kali dilihat</span>
             </div>
           </div>
-          <div className="flex justify-center mb-12">
+          <div className="flex justify-center mb-12" data-aos="fade-up">
             <img
               src={majalah.imageUrl}
               alt="Gambar Majalah"
               className="rounded-sm shadow-md md:w-3/4 lg:w-2/3"
             />
           </div>
-          <div className="mt-4 text-gray-800">
+          <div className="mt-4 text-gray-800" data-aos="fade-up">
             <p>{majalah.content}</p>
           </div>
-          <h2 className="flex items-center gap-4 text-3xl font-bold text-[#EC8305] mt-12">
+          <h2 className="flex items-center gap-4 text-3xl font-bold text-[#EC8305] mt-12" data-aos="fade-left">
             Majalah Lainnya
             <div className="flex-grow">
               <hr className="border-gray-300" />
@@ -79,7 +79,7 @@ const DetailMajalah = () => {
 
       <section>
         <div className="pb-12 bg-white xxl:px-72 xl:px-36 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="fade-left">
             {DummyMajalah.slice(0, 4).map((majalah) => (
               <Link
                 to={`/media-informasi/majalah/${majalah.slug}`}

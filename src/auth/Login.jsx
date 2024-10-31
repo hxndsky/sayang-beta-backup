@@ -12,7 +12,7 @@ const Login = () => {
   return (
     <>
       <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="w-full max-w-lg p-8 bg-white rounded-sm shadow-lg">
+        <div className="w-full max-w-lg p-8 bg-white rounded-sm shadow-lg" data-aos="fade-zoom-in">
           <Link to="/">
             <h1 className="text-4xl font-bold text-[#024CAA] mb-6 text-center">
               Sayang<span className="text-[#EC8305]">Beta</span>

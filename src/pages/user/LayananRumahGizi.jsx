@@ -9,7 +9,7 @@ const LayananRumahGizi = () => {
     <>
       <Header />
       <section className="bg-[#024CAA]">
-        <div className="lg:px-6 xxl:px-72 xl:px-36 md:px-4 sm:px-4 pt-24 pb-10">
+        <div className="lg:px-6 xxl:px-72 xl:px-36 md:px-4 sm:px-4 pt-24 pb-10" data-aos="fade-down">
           <div className="breadcrumbs text-base">
             <ul>
               <li>
@@ -29,15 +29,14 @@ const LayananRumahGizi = () => {
               </li>
             </ul>
           </div>
-          <h1 className="w-3/4 text-5xl font-bold pt-6 text-white ">
+          <h1 className="w-3/4 text-5xl font-bold pt-6 text-white">
             Rumah Gizi Pelangi Nusantara
           </h1>
         </div>
       </section>
 
       <section className="bg-white">
-        <div className="pb-8 pt-12 bg-white xxl:px-72 xl:px-36 sm:px-6 lg:px-8 text-lg">
-          {/* Article Metadata */}
+        <div className="pb-8 pt-12 xxl:px-72 xl:px-36 sm:px-6 lg:px-8 text-lg" data-aos="fade-up">
           <div className="flex items-center justify-between text-gray-500 text-sm mb-4">
             <p>
               Diposting pada:{" "}
@@ -49,7 +48,6 @@ const LayananRumahGizi = () => {
             </div>
           </div>
 
-          {/* Article Image */}
           <div className="flex justify-center mb-12">
             <img
               src="https://sim.sayanganak.semarangkota.go.id/frontend/assets/images/pelangi.jpg"
@@ -58,7 +56,6 @@ const LayananRumahGizi = () => {
             />
           </div>
 
-          {/* Article Content */}
           <div className="text-gray-700 text-lg leading-relaxed space-y-4 text-justify">
             <p>
               Rumah Gizi Pelangi Nusantara merupakan upaya percepatan penurunan

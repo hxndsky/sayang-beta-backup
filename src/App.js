@@ -20,7 +20,6 @@ import Kegiatan from './pages/user/Kegiatan';
 import DetailKegiatan from './pages/user/DetailKegiatan';
 // MEDIA INFORMASI
 import MediaVideo from './pages/user/MediaVideo';
-import DetailVideo from './pages/user/DetailVideo';
 import MediaMajalah from './pages/user/MediaMajalah';
 import DetailMajalah from './pages/user/DetailMajalah';
 import MediaInfografis from './pages/user/MediaInfografis';
@@ -53,7 +52,6 @@ function App() {
             <Route path="/kegiatan/:slug" element={<DetailKegiatan />} />
             {/* MEDIA */}
             <Route path="/media-informasi/video" element={<MediaVideo />} />
-            <Route path="/media-informasi/video/:slug" element={<DetailVideo />} />
             <Route path="/media-informasi/majalah" element={<MediaMajalah />} />
             <Route path="/media-informasi/majalah/:slug" element={<DetailMajalah />} />
             <Route path="/media-informasi/infografis" element={<MediaInfografis />} />

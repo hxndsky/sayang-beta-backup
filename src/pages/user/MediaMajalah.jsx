@@ -9,7 +9,7 @@ const MediaMajalah = () => {
     <>
       <Header />
       <section className="bg-[#024CAA]">
-        <div className="lg:px-6 xxl:px-72 xl:px-36 md:px-4 sm:px-4 pt-24 pb-10">
+        <div className="lg:px-6 xxl:px-72 xl:px-36 md:px-4 sm:px-4 pt-24 pb-10" data-aos="fade-down">
           <div className="breadcrumbs text-base">
             <ul>
               <li>
@@ -75,7 +75,7 @@ const MediaMajalah = () => {
       </section>
 
       <section className="bg-white py-12 xxl:px-72 xl:px-36 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" data-aos="fade-up">
           {DummyMajalah.map((majalah) => (
             <Link
               key={majalah.id}

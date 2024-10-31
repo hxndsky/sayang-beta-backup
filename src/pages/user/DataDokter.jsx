@@ -39,8 +39,8 @@ const DataDokter = () => {
   return (
     <>
       <Header />
-      <section>
-        <div className="bg-[#024CAA] lg:px-6 xxl:px-72 xl:px-36 md:px-4 sm:px-4 pt-24 pb-10">
+      <section className='bg-[#024CAA]'>
+        <div className="lg:px-6 xxl:px-72 xl:px-36 md:px-4 sm:px-4 pt-24 pb-10" data-aos="fade-down">
           <div className="breadcrumbs text-base">
             <ul>
               <li>
