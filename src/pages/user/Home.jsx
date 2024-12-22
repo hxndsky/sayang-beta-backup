@@ -189,19 +189,25 @@ const Home = () => {
               Tentang Kami
             </h2>
             <p className="text-[#263238] mb-10">
-              Aplikasi untuk mempermudah pemantauan pertumbuhan & perkembangan Balita sehingga dapat menunjang kesehatan anak & memberikan informasi kepada Orang tua secara mudah dan terpercaya.
+              Aplikasi untuk mempermudah pemantauan pertumbuhan & perkembangan
+              Balita sehingga dapat menunjang kesehatan anak & memberikan
+              informasi kepada Orang tua secara mudah dan terpercaya.
             </p>
             <ul>
               <li className="mb-2">
                 <h3 className="text-2xl font-semibold text-gray-900">Visi</h3>
                 <p className="text-[#263238] mb-4">
-                Mewujudkan generasi Balita yang sehat dan berkembang optimal melalui pemantauan pertumbuhan dan perkembangan yang mudah, akurat, dan terpercaya bagi setiap orang tua.
+                  Mewujudkan generasi Balita yang sehat dan berkembang optimal
+                  melalui pemantauan pertumbuhan dan perkembangan yang mudah,
+                  akurat, dan terpercaya bagi setiap orang tua.
                 </p>
               </li>
               <li>
                 <h3 className="text-2xl font-semibold text-gray-900">Misi</h3>
                 <p className="text-[#263238]">
-                Misi kami adalah menyediakan platform digital yang praktis dan terstruktur untuk membantu orang tua dalam memantau kesehatan dan perkembangan Balita secara optimal
+                  Misi kami adalah menyediakan platform digital yang praktis dan
+                  terstruktur untuk membantu orang tua dalam memantau kesehatan
+                  dan perkembangan Balita secara optimal
                 </p>
               </li>
             </ul>
@@ -405,11 +411,11 @@ const Home = () => {
                 Pelita)
               </h3>
               <p className="text-md text-gray-600">
-              Rumah Pelita merupakan inisiasi dari Pemerintah Kota (Pemkot)
-              Semarang sebagai salah satu upaya percepatan penurunan stunting
-              dalam bentuk daycare yang bertujuan meningkatkan pola asuh, asupan
-              makan anak, serta perkembangan anak sehingga bisa tercapai status
-              gizi yang optimal...
+                Rumah Pelita merupakan inisiasi dari Pemerintah Kota (Pemkot)
+                Semarang sebagai salah satu upaya percepatan penurunan stunting
+                dalam bentuk daycare yang bertujuan meningkatkan pola asuh,
+                asupan makan anak, serta perkembangan anak sehingga bisa
+                tercapai status gizi yang optimal...
               </p>
             </Link>
 
@@ -435,13 +441,14 @@ const Home = () => {
 
       {/* Testimoni */}
       <section id="testimoni" className="bg-white">
-        <div className="flex flex-col md:flex-row items-start gap-8 py-16 pb-20 xl:px-36 sm:px-6 lg:px-8 xxl:px-72">
-          <div className="md:w-1/3" data-aos="fade-right">
-            <h2 className="text-4xl font-bold text-[#EC8305] mb-4">
+        <div className="flex flex-col lg:flex-row items-start gap-8 py-16 pb-20 xl:px-36 sm:px-4 lg:px-8 xxl:px-72">
+          {/* Bagian Kiri (Judul dan Deskripsi) */}
+          <div className="w-full lg:w-1/3" data-aos="fade-right">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#EC8305] mb-4">
               Testimonial
             </h2>
             <p className="text-gray-500">
-              Berikut adalah beberapa testimonial dari para pengguna Sayang Beta.
+              Berikut adalah beberapa testimonial dari para pengguna SayangBeta.
             </p>
           </div>
 
@@ -450,94 +457,36 @@ const Home = () => {
           </div>
 
           <div
-            className="md:w-2/3 relative overflow-hidden"
+            className="w-full lg:w-2/3 relative overflow-hidden"
             data-aos="fade-left"
           >
             <div
               className="flex transition-transform duration-500"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
-              <div className="w-full md:w-1/2 flex-shrink-0 flex flex-col gap-4">
-                <div className="flex items-center text-[#EC8305]">
-                  {[...Array(5)].map((_, i) => (
-                    <FaStar key={i} />
-                  ))}
+              {/* Item Testimonial */}
+              {[...Array(5)].map((_, index) => (
+                <div
+                  key={index}
+                  className="w-full flex-shrink-0 flex flex-col gap-4 px-4 sm:px-6 md:px-8"
+                >
+                  <div className="flex items-center text-[#EC8305]">
+                    {[...Array(5)].map((_, i) => (
+                      <FaStar key={i} />
+                    ))}
+                  </div>
+                  <p className="text-gray-600">
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit.”
+                  </p>
+                  <div>
+                    <p className="text-gray-900 font-semibold">Nama Pengguna</p>
+                    <p className="text-blue-500">Pekerjaan</p>
+                  </div>
                 </div>
-                <p className="text-gray-600">
-                  “Saya sangat terbantu dengan informasi kesehatan di
-                  SayangBeta. Penjelasannya mudah dipahami dan informatif.”
-                </p>
-                <div>
-                  <p className="text-gray-900 font-semibold">Budi Santoso</p>
-                  <p className="text-blue-500">Guru Sekolah Dasar</p>
-                </div>
-              </div>
-
-              <div className="w-full md:w-1/2 flex-shrink-0 flex flex-col gap-4">
-                <div className="flex items-center text-[#EC8305]">
-                  {[...Array(5)].map((_, i) => (
-                    <FaStar key={i} />
-                  ))}
-                </div>
-                <p className="text-gray-600">
-                  “SayangBeta sangat membantu saya dalam menjaga kesehatan
-                  keluarga. Tips kesehatannya sangat bermanfaat.”
-                </p>
-                <div>
-                  <p className="text-gray-900 font-semibold">Siti Aisyah</p>
-                  <p className="text-blue-500">Ibu Rumah Tangga</p>
-                </div>
-              </div>
-
-              <div className="w-full md:w-1/2 flex-shrink-0 flex flex-col gap-4">
-                <div className="flex items-center text-[#EC8305]">
-                  {[...Array(5)].map((_, i) => (
-                    <FaStar key={i} />
-                  ))}
-                </div>
-                <p className="text-gray-600">
-                  “Platform SayangBeta membantu saya menemukan informasi yang
-                  akurat tentang kesehatan anak saya.”
-                </p>
-                <div>
-                  <p className="text-gray-900 font-semibold">Andi Pratama</p>
-                  <p className="text-blue-500">Pengusaha</p>
-                </div>
-              </div>
-
-              <div className="w-full md:w-1/2 flex-shrink-0 flex flex-col gap-4">
-                <div className="flex items-center text-[#EC8305]">
-                  {[...Array(5)].map((_, i) => (
-                    <FaStar key={i} />
-                  ))}
-                </div>
-                <p className="text-gray-600">
-                  “Informasi di SayangBeta sangat membantu saya dalam memahami
-                  kesehatan secara menyeluruh.”
-                </p>
-                <div>
-                  <p className="text-gray-900 font-semibold">Dewi Susanti</p>
-                  <p className="text-blue-500">Dokter Umum</p>
-                </div>
-              </div>
-
-              <div className="w-full md:w-1/2 flex-shrink-0 flex flex-col gap-4">
-                <div className="flex items-center text-[#EC8305]">
-                  {[...Array(5)].map((_, i) => (
-                    <FaStar key={i} />
-                  ))}
-                </div>
-                <p className="text-gray-600">
-                  “Saya selalu merekomendasikan SayangBeta untuk informasi
-                  kesehatan yang terpercaya.”
-                </p>
-                <div>
-                  <p className="text-gray-900 font-semibold">Rina Amelia</p>
-                  <p className="text-blue-500">Ahli Gizi</p>
-                </div>
-              </div>
+              ))}
             </div>
 
+            {/* Navigasi Carousel */}
             <div className="absolute top-2/3 transform -translate-y-1/2 flex gap-4 right-4">
               <button
                 onClick={handlePrev}

@@ -12,7 +12,10 @@ const Login = () => {
   return (
     <>
       <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="w-full max-w-lg p-8 bg-white rounded-sm shadow-lg" data-aos="fade-zoom-in">
+        <div
+          className="w-full max-w-lg p-8 bg-white rounded-sm shadow-lg"
+          data-aos="fade-zoom-in"
+        >
           <Link to="/">
             <h1 className="text-4xl font-bold text-[#024CAA] mb-6 text-center">
               Sayang<span className="text-[#EC8305]">Beta</span>
@@ -23,12 +26,12 @@ const Login = () => {
           <form className="space-y-6">
             <div>
               <label className="block mb-2 text-sm font-medium text-gray-700">
-                NIK
+                Nama Lengkap / No. Telp
               </label>
               <input
                 type="text"
                 className="w-full px-3 py-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#024CAA] bg-transparent text-black"
-                placeholder="NIK Anda"
+                placeholder="Masukkan nama atau no. telp Anda"
               />
             </div>
             <div className="relative">
@@ -50,21 +53,6 @@ const Login = () => {
                   <FaEye className="text-gray-500" />
                 )}
               </div>
-            </div>
-            <div className="flex items-center justify-between">
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  className="h-4 w-4 text-[#024CAA] focus:ring-[#024CAA] border-gray-300 rounded-sm bg-transparent"
-                />
-                <span className="ml-2 text-sm text-gray-700">Ingat Saya</span>
-              </label>
-              <Link
-                to="/lupa-katasandi"
-                className="text-sm text-[#024CAA] hover:underline"
-              >
-                Lupa Kata sandi?
-              </Link>
             </div>
             <button
               type="submit"
