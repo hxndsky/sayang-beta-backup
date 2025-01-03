@@ -21,17 +21,18 @@ const Login = () => {
               Sayang<span className="text-[#EC8305]">Beta</span>
             </h1>
           </Link>
-          <p className="text-gray-600 mb-6 text-center">Masuk ke akun anda</p>
+          <p className="text-gray-600 mb-6 text-center">Masuk ke akun Anda</p>
 
           <form className="space-y-6">
             <div>
               <label className="block mb-2 text-sm font-medium text-gray-700">
-                Nama Lengkap / No. Telp
+                Nama Lengkap
               </label>
               <input
                 type="text"
+                name="name"
                 className="w-full px-3 py-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#024CAA] bg-transparent text-black"
-                placeholder="Masukkan nama atau no. telp Anda"
+                placeholder="Masukkan nama Anda"
               />
             </div>
             <div className="relative">
@@ -40,6 +41,7 @@ const Login = () => {
               </label>
               <input
                 type={showPassword ? "text" : "password"}
+                name="password"
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#024CAA] bg-transparent text-black"
                 placeholder="********"
               />

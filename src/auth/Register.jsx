@@ -4,14 +4,9 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
-  };
-
-  const toggleConfirmPasswordVisibility = () => {
-    setShowConfirmPassword(!showConfirmPassword);
   };
 
   return (
@@ -37,6 +32,7 @@ const Register = () => {
               </label>
               <input
                 type="text"
+                name="name"
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#024CAA] bg-transparent text-black"
                 placeholder="Masukkan nama lengkap Anda"
               />
@@ -46,7 +42,8 @@ const Register = () => {
                 No. Telp
               </label>
               <input
-                type="number"
+                type="text"
+                name="phone"
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#024CAA] bg-transparent text-black"
                 placeholder="Masukkan no. telp Anda"
               />
@@ -57,6 +54,7 @@ const Register = () => {
               </label>
               <input
                 type="email"
+                name="email"
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#024CAA] bg-transparent text-black"
                 placeholder="Masukkan email Anda"
               />
@@ -67,6 +65,7 @@ const Register = () => {
               </label>
               <input
                 type={showPassword ? "text" : "password"}
+                name="password"
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#024CAA] bg-transparent text-black"
                 placeholder="********"
               />
@@ -82,26 +81,6 @@ const Register = () => {
               </div>
             </div>
 
-            <div className="relative">
-              <label className="block mb-2 text-sm font-medium text-gray-700">
-                Konfirmasi Kata Sandi
-              </label>
-              <input
-                type={showConfirmPassword ? "text" : "password"}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#024CAA] bg-transparent text-black"
-                placeholder="********"
-              />
-              <div
-                className="absolute inset-y-0 right-3 top-7 flex items-center cursor-pointer"
-                onClick={toggleConfirmPasswordVisibility}
-              >
-                {showConfirmPassword ? (
-                  <FaEyeSlash className="text-gray-500" />
-                ) : (
-                  <FaEye className="text-gray-500" />
-                )}
-              </div>
-            </div>
             <button
               type="submit"
               className="w-full bg-[#024CAA] text-white py-2 rounded-lg hover:bg-[#024CAA] transition duration-200"

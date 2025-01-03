@@ -3,6 +3,7 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
     './node_modules/rippleui/**/*.js',
+    'node_modules/preline/dist/*.js',
   ],
   theme: {
     screens: {
@@ -14,6 +15,10 @@ module.exports = {
     },
     extend: {},
   },
-  plugins: [require("rippleui")],
+  plugins: [
+    require("rippleui"),
+    require('preline/plugin')
+  ],
+
 }
 

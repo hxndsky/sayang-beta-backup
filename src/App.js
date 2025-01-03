@@ -1,6 +1,7 @@
 //import "./App.css";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import "preline/preline";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -26,12 +27,17 @@ import MediaInfografis from './pages/user/MediaInfografis';
 import DetailInfografis from './pages/user/DetailInfografis';
 import MediaArtikel from './pages/user/MediaArtikel';
 import DetailArtikel from './pages/user/DetailArtikel';
+import UploadArtikel from './pages/user/UploadArtikel';
 // LAYANAN
 import LayananRumahPelita from './pages/user/LayananRumahPelita';
 import LayananRumahGizi from './pages/user/LayananRumahGizi';
 // DATA
 import DataDokter from './pages/user/DataDokter';
 import DataPosyandu from './pages/user/DataPosyandu';
+
+// ADMIN
+import Dashboard from './pages/admin/Dashboard';
+import AccArtikel from './pages/admin/AccArtikel';
 
 function App() {
   useEffect(() => {
@@ -58,6 +64,8 @@ function App() {
             <Route path="/media-informasi/infografis/:slug" element={<DetailInfografis />} />
             <Route path="/media-informasi/artikel-kesehatan" element={<MediaArtikel />} />
             <Route path="/media-informasi/artikel-kesehatan/:slug" element={<DetailArtikel />} />
+            <Route path="/media-informasi/artikel-kesehatan/upload-artikel" element={<UploadArtikel />} />
+
             {/* LAYANAN */}
             <Route path="/layanan/rumah-penanganan-stunting-lintas-sektor-bagi-baduta" element={<LayananRumahPelita />} />
             <Route path="/layanan/rumah-gizi-pelangi-nusantara" element={<LayananRumahGizi />} />
@@ -68,6 +76,9 @@ function App() {
             <Route path="/masuk" element={<Login />} />
             <Route path="/buat-akun" element={<Register />} />
             <Route path="/lupa-katasandi" element={<ForgotPass />} />
+            {/* ADMIN */}
+            <Route path="/dashboard-admin" element={<Dashboard />} />
+            <Route path="/dashboard-admin/validasi-artikel" element={<AccArtikel />} />
           </Routes>
       </Router>
     </>
