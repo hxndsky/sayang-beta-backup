@@ -107,11 +107,6 @@ const DataDokter = () => {
                 {currentData.map((item, index) => (
                   <tr key={index} className="hover:bg-[#F0F0F0]">
                     <td className="border p-4 flex flex-col items-center">
-                      <img
-                        src={item.photo || "https://via.placeholder.com/150"}
-                        alt={item.nama}
-                        className="w-44 mb-2 rounded-sm"
-                      />
                       <p className="text-center font-semibold">{item.nama}</p>
                       <span className="bg-[#EC8305] text-white px-2 py-1 rounded-sm text-sm mt-2">
                         {item.spesialis}

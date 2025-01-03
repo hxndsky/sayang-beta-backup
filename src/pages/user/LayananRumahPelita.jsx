@@ -52,7 +52,7 @@ const LayananRumahPelita = () => {
 
           <div className="flex justify-center mb-12">
             <img
-              src="https://sim.sayanganak.semarangkota.go.id/frontend/assets/images/pelita.jpg"
+              src="https://i.ibb.co.com/zJbMFR8/pelita.jpg"
               alt="Gambar Artikel"
               className="rounded-sm shadow-md md:w-3/4 lg:w-2/3"
             />
