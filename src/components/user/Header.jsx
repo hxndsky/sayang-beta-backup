@@ -1,12 +1,31 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
 
   const toggleOffCanvas = () => {
     setIsOpen(!isOpen);
   };
+
+  const handleLogout = () => {
+    // Clear the token from localStorage
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);  // Update state to reflect logout
+    navigate("/masuk");  // Redirect to login page
+  };
+
+  // Check if there's a token when the component mounts
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLoggedIn(true);  // If token exists, user is logged in
+    } else {
+      setIsLoggedIn(false);  // If no token, user is not logged in
+    }
+  }, []);
 
   return (
     <>
@@ -218,18 +237,29 @@ const Header = () => {
             <hr className="text-[#263238]" />
 
             <div className="mt-auto space-y-4">
-              <Link
-                to="/masuk"
-                className="block btn-outline-primary border-[#024CAA] text-[#024CAA] hover:bg-[#024CAA] hover:text-white p-2 rounded-sm text-center font-medium"
-              >
-                Masuk
-              </Link>
-              <Link
-                to="/buat-akun"
-                className="block btn-outline-primary border-[#024CAA] text-white bg-[#024CAA] hover:bg-[#024CAA] p-2 rounded-sm text-center hover:font-medium"
-              >
-                Buat Akun
-              </Link>
+              {isLoggedIn ? (
+                <Link
+                  onClick={handleLogout}
+                  className="block btn-outline-primary border-[#FB4141] text-[#FB4141] hover:bg-[#FB4141] hover:text-white p-2 rounded-sm text-center font-medium"
+                >
+                  Logout
+                </Link>
+              ) : (
+                <>
+                  <Link
+                    to="/masuk"
+                    className="block btn-outline-primary border-[#024CAA] text-[#024CAA] hover:bg-[#024CAA] hover:text-white p-2 rounded-sm text-center font-medium"
+                  >
+                    Masuk
+                  </Link>
+                  <Link
+                    to="/buat-akun"
+                    className="block btn-outline-primary border-[#024CAA] text-white bg-[#024CAA] hover:bg-[#024CAA] p-2 rounded-sm text-center hover:font-medium"
+                  >
+                    Buat Akun
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -395,18 +425,29 @@ const Header = () => {
         </nav>
 
         <div className="space-x-4">
-          <Link
-            to="/masuk"
-            className="text-[#024CAA] border-[#024CAA] btn-outline-primary hover:bg-[#024CAA] hover:text-white px-4 py-2 rounded-sm"
-          >
-            Masuk
-          </Link>
-          <Link
-            to="/buat-akun"
-            className="border-[#024CAA] bg-[#024CAA] btn-outline-primary hover:bg-[#024CAA] hover:border-[#024CAA] text-white px-4 py-2 rounded-sm"
-          >
-            Buat Akun
-          </Link>
+          {isLoggedIn ? (
+            <button
+              onClick={handleLogout}
+              className="text-[#FB4141] border-[#FB4141] btn-outline-primary hover:bg-[#FB4141] hover:text-white px-4 py-2 rounded-sm"
+            >
+              Logout
+            </button>
+          ) : (
+            <>
+              <Link
+                to="/masuk"
+                className="text-[#024CAA] border-[#024CAA] btn-outline-primary hover:bg-[#024CAA] hover:text-white px-4 py-2 rounded-sm"
+              >
+                Masuk
+              </Link>
+              <Link
+                to="/buat-akun"
+                className="border-[#024CAA] bg-[#024CAA] btn-outline-primary hover:bg-[#024CAA] hover:border-[#024CAA] text-white px-4 py-2 rounded-sm"
+              >
+                Buat Akun
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </>

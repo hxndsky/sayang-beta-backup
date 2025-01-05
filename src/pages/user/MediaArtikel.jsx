@@ -1,15 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import DummyArtikel from "../../assets/dummy/DummyArtikel";
+import axios from "axios";
 import Header from "../../components/user/Header";
 import Footer from "../../components/user/Footer";
 
 const MediaArtikel = () => {
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // Mengambil data artikel yang sudah disetujui dari backend
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/api/articles/approved") // Tanpa token
+      .then((response) => {
+        setArticles(response.data); // Menyimpan artikel ke state
+        setLoading(false); // Menghentikan loading
+      })
+      .catch((error) => {
+        console.error("Error fetching articles:", error);
+        setLoading(false); // Menghentikan loading meskipun ada error
+      });
+  }, []);
+
   return (
     <>
       <Header />
       <section className="bg-[#024CAA]">
-        <div className="lg:px-6 xxl:px-72 xl:px-36 md:px-4 sm:px-4 pt-24 pb-10" data-aos="fade-down">
+        <div
+          className="lg:px-6 xxl:px-72 xl:px-36 md:px-4 sm:px-4 pt-24 pb-10"
+          data-aos="fade-down"
+        >
           <div className="breadcrumbs text-base">
             <ul>
               <li>
@@ -27,6 +47,14 @@ const MediaArtikel = () => {
           <h1 className="w-3/4 text-5xl font-bold pt-6 text-white">
             Media Informasi | Artikel Kesehatan
           </h1>
+          <div className="mt-6">
+            <Link
+              to="/media-informasi/artikel-kesehatan/upload-artikel" // Ganti dengan route ke halaman submit artikel
+              className="px-6 py-3 bg-[#EC8305] text-white font-bold text-lg rounded shadow-md hover:bg-[#d67204] transition"
+            >
+              + Tambah Artikel
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -45,7 +73,6 @@ const MediaArtikel = () => {
                 Video
               </h3>
             </Link>
-
             <Link
               to="/media-informasi/infografis"
               className="block p-2 bg-white border border-gray-200 rounded-sm shadow-sm hover:border-[#024CAA] hover:shadow-lg transition relative"
@@ -54,7 +81,6 @@ const MediaArtikel = () => {
                 Infografis
               </h3>
             </Link>
-
             <Link
               to="/media-informasi/majalah"
               className="block p-2 bg-white border border-gray-200 rounded-sm shadow-sm hover:border-[#024CAA] hover:shadow-lg transition relative"
@@ -63,7 +89,6 @@ const MediaArtikel = () => {
                 Majalah
               </h3>
             </Link>
-
             <Link
               to="/media-informasi/artikel-kesehatan"
               className="block p-2 bg-white border border-gray-200 rounded-sm shadow-sm hover:border-[#024CAA] hover:shadow-lg transition relative"
@@ -77,27 +102,33 @@ const MediaArtikel = () => {
       </section>
 
       <section className="bg-white py-12 xxl:px-72 xl:px-36 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" data-aos="fade-up">
-          {DummyArtikel.map((artikel) => (
-            <Link
-              key={artikel.id}
-              to={`/media-informasi/artikel-kesehatan/${artikel.slug}`}
-              className="bg-white shadow-md rounded-sm overflow-hidden transition-shadow duration-300 hover:shadow-lg block"
-            >
-              <img
-                src={artikel.imageUrl}
-                alt={artikel.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900">
-                  {artikel.title}
-                </h3>
-                <p className="text-sm text-[#024CAA] mt-2">{artikel.date}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
+        {loading ? (
+          <div className="text-center text-xl text-gray-500">Loading...</div>
+        ) : (
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          >
+            {articles.map((article) => (
+              <Link
+                key={article.id}
+                to={`/media-informasi/artikel-kesehatan/${article.slug}`} // Ganti dengan slug artikel
+                className="bg-white shadow-md rounded-sm overflow-hidden transition-shadow duration-300 hover:shadow-lg block"
+              >
+                <img
+                  src={article.image_url} // Pastikan API mengembalikan field image_url
+                  alt={article.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    {article.title}
+                  </h3>
+                  <p className="text-sm text-[#024CAA] mt-2">{article.date_uploaded}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        )}
       </section>
       <Footer />
     </>

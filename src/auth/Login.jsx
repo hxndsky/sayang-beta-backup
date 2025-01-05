@@ -1,12 +1,36 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import axios from "axios";
 
 const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState(""); // Menyimpan pesan error jika login gagal
+  const navigate = useNavigate(); // Gunakan useNavigate untuk navigasi
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:5000/api/users/login", {
+        username,
+        password,
+      });
+
+      // Simpan token JWT ke localStorage
+      localStorage.setItem("token", response.data.token);
+
+      // Redirect pengguna berdasarkan role yang diterima dari backend
+      const redirectTo = response.data.redirectTo;
+      navigate(redirectTo); // Arahkan pengguna ke halaman yang sesuai dengan role mereka
+    } catch (err) {
+      setError("Login gagal. Pastikan kredensial Anda benar.");
+    }
   };
 
   return (
@@ -23,16 +47,26 @@ const Login = () => {
           </Link>
           <p className="text-gray-600 mb-6 text-center">Masuk ke akun Anda</p>
 
-          <form className="space-y-6">
+          {/* Menampilkan error message jika login gagal */}
+          {error && (
+            <div className="mb-4 text-red-500 text-center">
+              {error}
+            </div>
+          )}
+
+          <form className="space-y-6" onSubmit={handleLogin}>
             <div>
               <label className="block mb-2 text-sm font-medium text-gray-700">
-                Nama Lengkap
+                Nama Pengguna
               </label>
               <input
                 type="text"
-                name="name"
+                name="username"
                 className="w-full px-3 py-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#024CAA] bg-transparent text-black"
-                placeholder="Masukkan nama Anda"
+                placeholder="Masukkan nama pengguna"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
               />
             </div>
             <div className="relative">
@@ -44,6 +78,9 @@ const Login = () => {
                 name="password"
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#024CAA] bg-transparent text-black"
                 placeholder="********"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
               />
               <div
                 className="absolute inset-y-0 right-3 top-7 flex items-center cursor-pointer"

@@ -1,12 +1,45 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import axios from "axios";
 
 const Register = () => {
+  const [username, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
+  };
+
+  const handleRegister = async (e) => {
+    e.preventDefault();
+
+    // Cek apakah semua data sudah benar
+    if (!username || !phone || !email || !password) {
+      return setError("Semua field wajib diisi");
+    }
+
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/users/register",
+        {
+          username,
+          phone,
+          email,
+          password,
+          role: "user", // Pastikan role sudah di set
+        }
+      );
+      navigate("/masuk");
+    } catch (err) {
+      console.error("Registration Error:", err); // Log lebih rinci untuk debugging
+      setError("Registrasi gagal. Pastikan data yang Anda masukkan benar.");
+    }
   };
 
   return (
@@ -25,7 +58,12 @@ const Register = () => {
             Buat akun untuk memulai
           </p>
 
-          <form className="space-y-6">
+          {/* Menampilkan error message jika registrasi gagal */}
+          {error && (
+            <div className="mb-4 text-red-500 text-center">{error}</div>
+          )}
+
+          <form className="space-y-6" onSubmit={handleRegister}>
             <div>
               <label className="block mb-2 text-sm font-medium text-gray-700">
                 Nama Lengkap
@@ -35,6 +73,9 @@ const Register = () => {
                 name="name"
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#024CAA] bg-transparent text-black"
                 placeholder="Masukkan nama lengkap Anda"
+                value={username}
+                onChange={(e) => setName(e.target.value)}
+                required
               />
             </div>
             <div>
@@ -46,6 +87,9 @@ const Register = () => {
                 name="phone"
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#024CAA] bg-transparent text-black"
                 placeholder="Masukkan no. telp Anda"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                required
               />
             </div>
             <div>
@@ -57,6 +101,9 @@ const Register = () => {
                 name="email"
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#024CAA] bg-transparent text-black"
                 placeholder="Masukkan email Anda"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
               />
             </div>
             <div className="relative">
@@ -68,6 +115,9 @@ const Register = () => {
                 name="password"
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#024CAA] bg-transparent text-black"
                 placeholder="********"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
               />
               <div
                 className="absolute inset-y-0 right-3 top-7 flex items-center cursor-pointer"
