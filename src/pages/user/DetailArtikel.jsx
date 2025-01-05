@@ -5,21 +5,20 @@ import Header from "../../components/user/Header";
 import Footer from "../../components/user/Footer";
 
 const DetailArtikel = () => {
-  const { slug } = useParams(); // Ambil slug dari URL
-  const [artikel, setArtikel] = useState(null); // State untuk menyimpan artikel yang dipilih
-  const [otherArticles, setOtherArticles] = useState([]); // State untuk menyimpan artikel lainnya
-  const [loading, setLoading] = useState(true); // State untuk indikator loading
-  const [error, setError] = useState(null); // State untuk menangani error
+  const { slug } = useParams();
+  const [artikel, setArtikel] = useState(null);
+  const [otherArticles, setOtherArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Mengambil artikel berdasarkan slug
     const fetchArtikel = async () => {
       try {
         const response = await axios.get(
           `http://localhost:5000/api/articles/slug/${slug}`
         );
-        console.log(response.data); // Log data artikel untuk melihat apakah image_url sudah benar
-        setArtikel(response.data); // Mengambil data artikel yang sudah disesuaikan
+        console.log(response.data);
+        setArtikel(response.data);
         setLoading(false);
       } catch (err) {
         console.error(err);
@@ -28,7 +27,6 @@ const DetailArtikel = () => {
       }
     };
 
-    // Mengambil artikel lainnya (daftar artikel yang disetujui)
     const fetchOtherArticles = async () => {
       try {
         const response = await axios.get(
@@ -110,9 +108,11 @@ const DetailArtikel = () => {
               className="rounded-sm shadow-md md:w-3/4 lg:w-2/3"
             />
           </div>
-          <div className="mt-4 text-gray-800" data-aos="fade-up">
-            <p>{artikel.description}</p>
-          </div>
+          <div
+            className="mt-4 text-gray-800"
+            data-aos="fade-up"
+            dangerouslySetInnerHTML={{ __html: artikel.description }}
+          ></div>
           <h2
             className="flex items-center gap-4 text-3xl font-bold text-[#EC8305] mt-12"
             data-aos="fade-left"

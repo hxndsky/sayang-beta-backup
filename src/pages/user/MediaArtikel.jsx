@@ -6,19 +6,16 @@ import Footer from "../../components/user/Footer";
 
 const MediaArtikel = () => {
   const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   // Mengambil data artikel yang sudah disetujui dari backend
   useEffect(() => {
     axios
       .get("http://localhost:5000/api/articles/approved") // Tanpa token
       .then((response) => {
-        setArticles(response.data); // Menyimpan artikel ke state
-        setLoading(false); // Menghentikan loading
+        setArticles(response.data);
       })
       .catch((error) => {
         console.error("Error fetching articles:", error);
-        setLoading(false); // Menghentikan loading meskipun ada error
       });
   }, []);
 
@@ -47,10 +44,10 @@ const MediaArtikel = () => {
           <h1 className="w-3/4 text-5xl font-bold pt-6 text-white">
             Media Informasi | Artikel Kesehatan
           </h1>
-          <div className="mt-6">
+          <div className="mt-8">
             <Link
               to="/media-informasi/artikel-kesehatan/upload-artikel" // Ganti dengan route ke halaman submit artikel
-              className="px-6 py-3 bg-[#EC8305] text-white font-bold text-lg rounded shadow-md hover:bg-[#d67204] transition"
+              className="px-3 py-2 bg-white text-[#024CAA] font-bold text-lg rounded shadow-md hover:bg-[#EC8305] hover:text-white transition"
             >
               + Tambah Artikel
             </Link>
@@ -101,13 +98,12 @@ const MediaArtikel = () => {
         </div>
       </section>
 
-      <section className="bg-white py-12 xxl:px-72 xl:px-36 sm:px-6 lg:px-8">
-        {loading ? (
-          <div className="text-center text-xl text-gray-500">Loading...</div>
-        ) : (
-          <div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
-          >
+      <section className="bg-white">
+        <div
+          className=" py-12 xxl:px-72 xl:px-36 sm:px-6 lg:px-8"
+          data-aos="fade-up"
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {articles.map((article) => (
               <Link
                 key={article.id}
@@ -123,12 +119,14 @@ const MediaArtikel = () => {
                   <h3 className="text-lg font-semibold text-gray-900">
                     {article.title}
                   </h3>
-                  <p className="text-sm text-[#024CAA] mt-2">{article.date_uploaded}</p>
+                  <p className="text-sm text-[#024CAA] mt-2">
+                    {article.date_uploaded}
+                  </p>
                 </div>
               </Link>
             ))}
           </div>
-        )}
+        </div>
       </section>
       <Footer />
     </>
