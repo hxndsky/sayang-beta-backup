@@ -149,6 +149,9 @@ const DetailArtikel = () => {
                       <h3 className="text-lg font-semibold text-gray-900">
                         {otherArtikel.title}
                       </h3>
+                      <p className="text-sm text-[#024CAA] mt-2">
+                        {otherArtikel.date_uploaded}
+                      </p>
                     </div>
                   </Link>
                 ))}
