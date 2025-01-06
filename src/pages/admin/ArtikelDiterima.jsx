@@ -2,12 +2,10 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Header from "../../components/admin/Header";
 
-const AccArtikel = () => {
+const ArtikelDiterima = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
-  const [actionMessage, setActionMessage] = useState("");
-  const [actionLoading, setActionLoading] = useState(false);
 
   const fetchArticles = async () => {
     setLoading(true);
@@ -15,7 +13,7 @@ const AccArtikel = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.get(
-        "http://localhost:5000/api/articles/pending",
+        "http://localhost:5000/api/articles/approved",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -28,30 +26,6 @@ const AccArtikel = () => {
       );
     } finally {
       setLoading(false);
-    }
-  };
-
-  const handleStatusChange = async (articleId, status) => {
-    setActionLoading(true);
-    setActionMessage("");
-    try {
-      const token = localStorage.getItem("token");
-      const response = await axios.post(
-        `http://localhost:5000/api/articles/review/${articleId}`,
-        { status },
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
-
-      setActionMessage(response.data.message);
-      fetchArticles(); // Refresh artikel setelah status diubah
-    } catch (error) {
-      setActionMessage(
-        error.response?.data?.message || "Gagal mengubah status artikel."
-      );
-    } finally {
-      setActionLoading(false);
     }
   };
 
@@ -75,7 +49,7 @@ const AccArtikel = () => {
         <div className="py-20 md:px-2 xl:px-[8rem] sm:px-2 xxl:px-[17rem]">
           <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
             <h1 className="text-2xl font-bold text-gray-800 dark:text-black">
-              Tinjau Artikel
+              Artikel Diterima
             </h1>
 
             {message && (
@@ -96,7 +70,7 @@ const AccArtikel = () => {
               </p>
             ) : articles.length === 0 ? (
               <p className="text-center text-gray-700 dark:text-gray-300">
-                Tidak ada artikel untuk ditinjau.
+                Tidak ada artikel yang diterima.
               </p>
             ) : (
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -113,40 +87,13 @@ const AccArtikel = () => {
                     <h3 className="text-lg font-bold text-gray-800">
                       {article.title}
                     </h3>
+
                     <p
                       className="text-sm text-gray-600 mt-2"
                       dangerouslySetInnerHTML={{
                         __html: truncateText(article.description, 30),
                       }}
                     ></p>
-                    <div className="mt-4 flex space-x-2">
-                      <button
-                        onClick={() =>
-                          handleStatusChange(article.id, "approved")
-                        }
-                        className={`px-4 py-2 text-sm rounded-sm text-white ${
-                          actionLoading
-                            ? "bg-green-400 cursor-not-allowed"
-                            : "bg-green-600 hover:bg-green-700"
-                        }`}
-                        disabled={actionLoading}
-                      >
-                        {actionLoading ? "Memproses..." : "Setujui"}
-                      </button>
-                      <button
-                        onClick={() =>
-                          handleStatusChange(article.id, "rejected")
-                        }
-                        className={`px-4 py-2 text-sm rounded-sm text-white ${
-                          actionLoading
-                            ? "bg-red-400 cursor-not-allowed"
-                            : "bg-red-600 hover:bg-red-700"
-                        }`}
-                        disabled={actionLoading}
-                      >
-                        {actionLoading ? "Memproses..." : "Tolak"}
-                      </button>
-                    </div>
                   </div>
                 ))}
               </div>
@@ -158,4 +105,4 @@ const AccArtikel = () => {
   );
 };
 
-export default AccArtikel;
+export default ArtikelDiterima;

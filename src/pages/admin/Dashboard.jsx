@@ -7,11 +7,15 @@ const Dashboard = () => {
     <>
       <Header />
       <div className="bg-gray-50 dark:bg-neutral-900 min-h-screen">
-        <div className="w-full lg:ps-64">
+        <div className="py-20 md:px-2 xl:px-[8rem] sm:px-2 xxl:px-[17rem]">
           <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
+            <h1 className="text-2xl font-bold text-gray-800 dark:text-black">
+              Dashboard
+            </h1>
+            
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {/* Card 1 */}
-              <div className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
+              <div className="flex flex-col bg-white border shadow-sm rounded-xl">
                 <div className="p-4 md:p-5">
                   <div className="flex items-center gap-x-2">
                     <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-neutral-500">
