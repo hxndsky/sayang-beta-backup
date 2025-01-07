@@ -75,7 +75,7 @@ const AccArtikel = () => {
         <div className="py-20 md:px-2 xl:px-[8rem] sm:px-2 xxl:px-[17rem]">
           <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
             <h1 className="text-2xl font-bold text-gray-800 dark:text-black">
-              Tinjau Artikel
+              Review Artikel
             </h1>
 
             {message && (
