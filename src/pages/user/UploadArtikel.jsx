@@ -169,7 +169,7 @@ const UploadArtikel = () => {
                   message.includes("berhasil")
                     ? "text-green-600"
                     : "text-red-600"
-                } bg-gray-100 border ${
+                } bg-transparent border ${
                   message.includes("berhasil")
                     ? "border-green-400"
                     : "border-red-400"

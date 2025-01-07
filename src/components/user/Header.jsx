@@ -426,12 +426,12 @@ const Header = () => {
 
         <div className="space-x-4">
           {isLoggedIn ? (
-            <button
+            <Link
               onClick={handleLogout}
               className="text-[#FB4141] border-[#FB4141] btn-outline-primary hover:bg-[#FB4141] hover:text-white px-4 py-2 rounded-sm"
             >
               Logout
-            </button>
+            </Link>
           ) : (
             <>
               <Link
